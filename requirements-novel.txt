@@ -1,0 +1,2 @@
+-r requirements-api.txt
+agent-framework-core==1.12.0

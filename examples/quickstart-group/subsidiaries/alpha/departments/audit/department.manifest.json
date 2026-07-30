@@ -1,0 +1,30 @@
+{
+  "schema_version": "department-pack/v0",
+  "department_id": "example.audit",
+  "subsidiary_id": "example.alpha",
+  "group_id": "example.group",
+  "name": "Audit Department",
+  "status": "active",
+  "mission": "Independently verify evidence and completion claims before CEO reporting.",
+  "capabilities": ["audit"],
+  "paths": {
+    "skills": "subsidiaries/alpha/departments/audit/skills",
+    "workflows": "subsidiaries/alpha/departments/audit/workflows",
+    "evaluations": "subsidiaries/alpha/departments/audit/evaluations"
+  },
+  "executor": {
+    "kind": "template",
+    "workflow": "subsidiaries/alpha/departments/audit/workflows/default.workflow.json"
+  },
+  "execution_policy": {
+    "action": "audit",
+    "level": "L1",
+    "resource": "group://artifact/audit",
+    "reversible": true,
+    "external_effect": false
+  },
+  "model_requirements": {
+    "required": {"text": true, "structured_output": "json"},
+    "optional": []
+  }
+}

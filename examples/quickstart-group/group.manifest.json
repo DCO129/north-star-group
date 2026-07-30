@@ -1,0 +1,53 @@
+{
+  "schema_version": "group-pack/v0",
+  "group_id": "example.group",
+  "name": "Example Private AI Group",
+  "runtime": {
+    "minimum_version": "0.2.0"
+  },
+  "paths": {
+    "governance": "governance",
+    "shared": "shared",
+    "subsidiaries": "subsidiaries",
+    "tasks": "tasks",
+    "checkpoints": "checkpoints",
+    "evaluations": "evaluations",
+    "adapters": "adapters",
+    "migrations": "migrations",
+    "provenance": "provenance",
+    "audit": "audit"
+  },
+  "executive": {
+    "executive_id": "example.ceo",
+    "manifest": "governance/executive.manifest.json"
+  },
+  "subsidiaries": [
+    {
+      "subsidiary_id": "example.alpha",
+      "manifest": "subsidiaries/alpha/company.manifest.json"
+    }
+  ],
+  "governance": {
+    "decision_authority": "group",
+    "operational_authority": "executive",
+    "human_gateway": "executive_only"
+  },
+  "security": {
+    "secrets": "external_only",
+    "allow_absolute_paths": false
+  },
+  "task_continuity": {
+    "provider_threads": "aliases_only"
+  },
+  "indexes": {
+    "rebuildable": true
+  },
+  "model_requirements": {
+    "required": {
+      "text": true
+    },
+    "optional": [
+      "vision"
+    ]
+  }
+}

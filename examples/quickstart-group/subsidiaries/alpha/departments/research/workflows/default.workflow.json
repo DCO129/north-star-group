@@ -1,0 +1,37 @@
+{
+  "schema_version": "department-workflow/v0",
+  "workflow_id": "example.research.default",
+  "capability_actions": {
+    "research": {
+      "outcome_code": "research-brief-prepared",
+      "sections": [
+        "objective-and-scope",
+        "evidence-plan",
+        "alternatives",
+        "verification-plan",
+        "recommendation"
+      ],
+      "quality_checks": [
+        "scope-defined",
+        "sources-traceable",
+        "claims-separated-from-evidence",
+        "uncertainty-visible"
+      ]
+    },
+    "knowledge-curation": {
+      "outcome_code": "knowledge-entry-prepared",
+      "sections": [
+        "canonical-owner",
+        "normalized-facts",
+        "provenance",
+        "conflicts",
+        "promotion-decision"
+      ],
+      "quality_checks": [
+        "single-source-owner",
+        "duplicate-check",
+        "provenance-present"
+      ]
+    }
+  }
+}

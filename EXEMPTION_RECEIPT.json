@@ -1,0 +1,18 @@
+{
+  "safe_exemption_count": 2,
+  "schema_version": "public-exemption-receipt/v1",
+  "verified_exemptions": [
+    {
+      "expected_value": "platform-raw-secret",
+      "path": "src/private_ai_company/platform_adapter.py",
+      "status": "verified_safe",
+      "symbol": "PLATFORM_RAW_SECRET"
+    },
+    {
+      "expected_value": "novel-production-raw-secret",
+      "path": "src/private_ai_company/production_batch.py",
+      "status": "verified_safe",
+      "symbol": "PROD_RAW_SECRET"
+    }
+  ]
+}

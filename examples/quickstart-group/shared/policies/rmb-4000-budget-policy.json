@@ -1,0 +1,25 @@
+{
+  "schema_version": "budget-policy/v0",
+  "currency": "CNY",
+  "total_fen": 400000,
+  "reserve_fen": 100000,
+  "reserve_locked": true,
+  "category_caps_fen": {
+    "model_api": 60000,
+    "tools_data": 50000,
+    "tools_research": 30000,
+    "infrastructure": 30000,
+    "cross_border_network": 50000,
+    "business_validation": 80000
+  },
+  "approval": {
+    "reserve_unlock": "human_explicit",
+    "external_spend": "l4_human_explicit",
+    "hard_stop_at_cap": true
+  },
+  "foreign_currency": {
+    "display_currency": "CNY",
+    "planning_usd_cny": "7.50",
+    "settlement_rule": "record_actual_cny_charge"
+  }
+}

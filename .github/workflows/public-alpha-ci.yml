@@ -1,0 +1,49 @@
+name: public-alpha-ci
+
+# Lightweight, bounded, read-only CI for the public-alpha candidate.
+# Runs only portable public checks. It never calls a real model, never starts a
+# browser/dashboard build, never runs the full private repository suite, never
+# accesses private paths, never publishes, and never uses repository secrets.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+# Read-only by default. No write permissions, no secrets, no publish step.
+permissions:
+  contents: read
+
+jobs:
+  public-alpha-checks:
+    name: Public alpha portable checks (Windows, Python 3.11)
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install declared public package
+        run: python -m pip install --upgrade pip && python -m pip install .
+
+      - name: Static documentation validation
+        run: python scripts/validate_docs.py --staging-root .
+
+      - name: Deterministic export plus fail-closed boundary validation
+        run: |
+          python scripts/export_public_alpha.py --source-root . --staging-root "${{ runner.temp }}/_ci_staging"
+          python scripts/validate_public_alpha.py --staging-root "${{ runner.temp }}/_ci_staging"
+
+      - name: Portable public smoke test
+        run: python tests/smoke_public_alpha.py
+
+      - name: Portable CI-contract test (export and boundary policy)
+        run: python tests/test_public_alpha_ci_contract.py
+
+      - name: Compile and import check (staged package and scripts)
+        run: python -m compileall -q src scripts

@@ -1,0 +1,32 @@
+name: Bug report
+description: Report a defect in the public-alpha runtime or its export/validation tooling
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Do NOT include secrets, private filesystem paths,
+        or private data in this public issue. For security vulnerabilities, use
+        the private reporting path described in SECURITY.md instead.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: A clear and concise description of the defect.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps using the public quickstart (examples/quickstart-group).
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, package version.
+    validations:
+      required: false

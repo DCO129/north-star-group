@@ -1,0 +1,19 @@
+{
+  "schema_version": "economic-budget-policy/v1",
+  "policy_id": "local-economic-policy",
+  "version": 1,
+  "currency": "CNY",
+  "total_fen": 400000,
+  "reserve_fen": 100000,
+  "warning_ratio_milli": 800,
+  "category_caps_fen": {
+    "model_api": 60000,
+    "tools_data": 50000,
+    "tools_research": 30000,
+    "infrastructure": 30000,
+    "cross_border_network": 50000,
+    "business_validation": 80000
+  },
+  "status": "active",
+  "credentials": {}
+}

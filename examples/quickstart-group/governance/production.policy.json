@@ -1,0 +1,35 @@
+{
+  "schema_version": "novel-production-policy/v1",
+  "policy_id": "production-policy-minimal-group",
+  "title": "W2-2 Novel Production Batch Policy",
+  "status": "active",
+  "scope": "novel-production-batch",
+  "allowed_provider_modes": ["local-deterministic"],
+  "allowed_cost_modes": ["zero-cost"],
+  "default_transport": "deny-all-shadow",
+  "require_local_creation_only": true,
+  "forbid_external_publication": true,
+  "forbid_network_or_model_calls": true,
+  "required_quality_gate": true,
+  "min_required_chapters": 1,
+  "slot_char_range": {"min": 200, "max": 12000},
+  "slot_token_budget_range": {"min": 128, "max": 4096},
+  "release": {
+    "require_all_slots_accepted": true,
+    "require_immutable_manifest": true,
+    "require_w1_1_version_binding": true,
+    "require_release_bundle_candidate": true
+  },
+  "restart_safety": {
+    "append_only_event_log": true,
+    "idempotent_replay": true,
+    "checkpoint_required": true
+  },
+  "rights": {
+    "all_content_owned_or_distilled": true,
+    "no_unattributed_sources": true
+  },
+  "not_before": null,
+  "expires_at": null,
+  "policy_version": "1"
+}

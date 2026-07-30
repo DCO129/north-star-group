@@ -1,0 +1,98 @@
+{
+  "schema_version": "public-export-policy/v1",
+  "mode": "default-deny",
+  "description": "Default-deny public export policy for the North-Star-Group v0.1-alpha publication boundary. Only explicitly allowed source files are copied; everything else is excluded. Generated public artifacts are produced deterministically by the exporter.",
+  "allow": {
+    "files": [
+      "src/private_ai_company/**/*.py",
+      "pyproject.toml",
+      "requirements-api.txt",
+      "requirements-novel.txt",
+      "requirements-research.txt",
+      "README.md",
+      "bootstrap.ps1",
+      "examples/quickstart-group/**/*",
+      "architecture/**/*",
+      "scripts/export_public_alpha.py",
+      "scripts/validate_public_alpha.py",
+      "scripts/validate_docs.py",
+      "scripts/run_clean_room.ps1",
+      "scripts/verify_g1_5_publication_candidate.py",
+      "tests/smoke_public_alpha.py",
+      "tests/test_public_alpha_ci_contract.py",
+      "tests/test_g1_5_publication_candidate.py",
+      "config/public-export-policy.json",
+      "LICENSE",
+      "CONTRIBUTING.md",
+      "SECURITY.md",
+      "CODE_OF_CONDUCT.md",
+      "ROADMAP.md",
+      "CHANGELOG.md",
+      ".github/**/*",
+      "docs/public/**/*"
+    ]
+  },
+  "deny": {
+    "secret_patterns": [
+      "sk-[A-Za-z0-9]{20,}",
+      "AKIA[0-9A-Z]{12,}",
+      "ghp_[A-Za-z0-9]{36,}",
+      "eyJ[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+",
+      "-----BEGIN [A-Z ]*PRIVATE KEY-----",
+      "(?i)Authorization:\\s*Bearer\\s+[A-Za-z0-9._-]{10,}",
+      "(?i)(password|passwd|secret|client_secret|private_key|access_key)\\s*[:=]\\s*[\"'][^\"']{8,}[\"']"
+    ],
+    "private_path_substrings": [
+      ".qa-artifacts",
+      "pilot-evidence",
+      "runtime-root",
+      "kb_global",
+      "knowledge-base",
+      "screenshots",
+      ".qa-runtime",
+      ".launcher-state"
+    ],
+    "machine_path_patterns": [
+      "[A-Za-z]:[\\\\/]Users[\\\\/][^\\\\/]+",
+      "[A-Za-z]:[\\\\/]CodexLab",
+      "/home/[a-z]+/kb_global",
+      "wsl\\.localhost",
+      "kb-ubuntu"
+    ],
+    "prohibited_extensions": [
+      ".pyc", ".log", ".png", ".jpg", ".jpeg", ".gif", ".bmp",
+      ".pem", ".key", ".pfx", ".crt", ".p12", ".keystore"
+    ],
+    "prohibited_filenames": [
+      ".env"
+    ],
+    "prohibited_dir_components": [
+      "__pycache__", ".pytest_cache", ".ruff_cache", ".venv", ".git",
+      "node_modules", ".tmp-debug", ".tmp-debug-adapter", ".tmp-debug-group"
+    ]
+  },
+  "secret_exemptions": [
+    {
+      "path": "src/private_ai_company/platform_adapter.py",
+      "symbol": "PLATFORM_RAW_SECRET",
+      "expected_value": "platform-raw-secret"
+    },
+    {
+      "path": "src/private_ai_company/production_batch.py",
+      "symbol": "PROD_RAW_SECRET",
+      "expected_value": "novel-production-raw-secret"
+    }
+  ],
+  "scrub": {
+    "machine_path_patterns": [
+      "[A-Za-z]:[\\\\/]Users[\\\\/][^\\\\/]+",
+      "[A-Za-z]:[\\\\/]CodexLab",
+      "/home/[a-z]+/kb_global"
+    ],
+    "replacement": "<PROJECT_ROOT>"
+  },
+  "staging": {
+    "normalize_mtime": true,
+    "mtime_epoch": 0
+  }
+}

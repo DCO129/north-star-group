@@ -1,0 +1,39 @@
+{
+  "schema_version": "department-pack/v0",
+  "department_id": "example.novel",
+  "subsidiary_id": "example.alpha",
+  "group_id": "example.group",
+  "name": "Novel Department",
+  "status": "active",
+  "mission": "Assemble grounded chapter context from reviewed local knowledge, draft a deterministic local chapter, run an independent quality gate, and register the accepted artifact through RestartSafeStateSpine. Local, free, reversible, no external effect.",
+  "capabilities": [
+    "novel-context",
+    "novel-draft",
+    "novel-quality",
+    "novel-artifact"
+  ],
+  "paths": {
+    "skills": "subsidiaries/alpha/departments/novel/skills",
+    "workflows": "subsidiaries/alpha/departments/novel/workflows",
+    "evaluations": "subsidiaries/alpha/departments/novel/evaluations"
+  },
+  "executor": {
+    "kind": "template",
+    "workflow": "subsidiaries/alpha/departments/novel/workflows/default.workflow.json"
+  },
+  "execution_policy": {
+    "action": "novel",
+    "level": "L1",
+    "resource": "group://knowledge/novel",
+    "reversible": true,
+    "external_effect": false,
+    "budget_category": "none"
+  },
+  "model_requirements": {
+    "required": {
+      "text": true,
+      "structured_output": "json"
+    },
+    "optional": []
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": "department-workflow/v0",
+  "capability_actions": {
+    "audit": {
+      "outcome_code": "audit-report-prepared",
+      "sections": ["source-integrity", "plan-completeness", "budget-boundary", "verdict"],
+      "quality_checks": ["evidence-present", "hash-present", "owners-present", "gates-present"]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+name: Architecture proposal
+description: Propose an architecture or roadmap change (proposal-only; requires owner/Codex acceptance)
+title: "[ARCH-PROPOSAL] "
+labels: ["architecture", "proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Architecture and roadmap proposals are PROPOSAL-ONLY. They do NOT
+        automatically replace the canonical roadmap. A proposal becomes
+        effective only after explicit owner/Codex governance acceptance.
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this change worthwhile for the public-alpha runtime?
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Proposed design
+      description: Describe the design, modules, and public surface affected.
+    validations:
+      required: true
+  - type: textarea
+    id: boundary-impact
+    attributes:
+      label: Public/private-boundary impact
+      description: Does this change the default-deny export surface or add any private data?
+    validations:
+      required: true

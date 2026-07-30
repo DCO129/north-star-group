@@ -1,0 +1,26 @@
+{
+  "schema": "group-layer-model/v1",
+  "updated_at": "2026-07-23T00:00:00+08:00",
+  "human_entry": {
+    "actor": "zero",
+    "allowed_target": "group-ceo",
+    "direct_subsidiary_access": false,
+    "direct_worker_access": false
+  },
+  "layers": [
+    {"id":"L0","name":"human-entry","members":["zero"],"ui_surface":"ceo-conversation"},
+    {"id":"L1","name":"group-governance","members":["group-ceo","policy","budget","approval","audit","portfolio-router"],"ui_surface":"governance"},
+    {"id":"L2","name":"organizational-execution","members":["novel-subsidiary","group-corporate-functions","future-subsidiaries"],"ui_surface":"virtual-office"},
+    {"id":"L3","name":"agent-workflow-runtime","members":["subsidiary-leads","planners","writers","editors","release-operators","auditors"],"ui_surface":"task-graph"},
+    {"id":"L4","name":"shared-capability-services","members":["retrieval-service","browser-service","file-service","publishing-adapters","evaluation-service","notification-service"],"ui_surface":"service-calls"},
+    {"id":"L5","name":"data-knowledge-infrastructure","members":["canonical-knowledge","memory","story-bibles","materials","provenance","indexes"],"ui_surface":"infrastructure-drawer"},
+    {"id":"L6","name":"platform-infrastructure","members":["model-providers","mcp-tools","permissions","budgets","logs","checkpoints","queues","storage"],"ui_surface":"infrastructure-drawer"}
+  ],
+  "constraints": [
+    "knowledge-is-not-an-organization-unit",
+    "codex-is-upgrade-maintainer-not-production-runtime",
+    "subsidiary-leads-report-to-ceo",
+    "hidden-chain-of-thought-is-never-persisted-or-rendered",
+    "external-side-effects-require-policy-and-approval"
+  ]
+}

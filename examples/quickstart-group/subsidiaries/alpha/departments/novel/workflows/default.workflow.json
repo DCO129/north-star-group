@@ -1,0 +1,64 @@
+{
+  "schema_version": "department-workflow/v0",
+  "workflow_id": "example.novel.default",
+  "capability_actions": {
+    "novel-context": {
+      "outcome_code": "novel-context-ready",
+      "sections": [
+        "objective-and-scope",
+        "knowledge-query",
+        "context-package",
+        "citation-evidence"
+      ],
+      "quality_checks": [
+        "project-exists",
+        "materials-approved",
+        "context-ready",
+        "writes-novel-prose-false"
+      ]
+    },
+    "novel-draft": {
+      "outcome_code": "novel-draft-ready",
+      "sections": [
+        "goal",
+        "grounded-prose",
+        "character-count"
+      ],
+      "quality_checks": [
+        "prose-non-empty",
+        "within-char-range",
+        "context-hash-bound"
+      ]
+    },
+    "novel-quality": {
+      "outcome_code": "novel-quality-accepted",
+      "sections": [
+        "schema-binding",
+        "hash-integrity",
+        "char-range",
+        "anchors-cited",
+        "forbidden-absent",
+        "structural-chapter"
+      ],
+      "quality_checks": [
+        "required-anchors-cited",
+        "required-craft-cited",
+        "no-external-effect",
+        "dependency-evidence-complete"
+      ]
+    },
+    "novel-artifact": {
+      "outcome_code": "novel-artifact-accepted",
+      "sections": [
+        "accepted-artifact",
+        "evidence-registration",
+        "spine-recovery"
+      ],
+      "quality_checks": [
+        "quality-accepted",
+        "artifact-registered",
+        "evidence-hash-bound"
+      ]
+    }
+  }
+}

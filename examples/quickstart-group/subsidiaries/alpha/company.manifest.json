@@ -1,0 +1,39 @@
+{
+  "schema_version": "subsidiary-pack/v0",
+  "subsidiary_id": "example.alpha",
+  "group_id": "example.group",
+  "name": "Example Alpha Subsidiary",
+  "paths": {
+    "knowledge": "subsidiaries/alpha/knowledge",
+    "memory": "subsidiaries/alpha/memory",
+    "policies": "subsidiaries/alpha/policies",
+    "departments": "subsidiaries/alpha/departments"
+  },
+  "departments": [
+    {
+      "department_id": "example.research",
+      "manifest": "subsidiaries/alpha/departments/research/department.manifest.json"
+    },
+    {
+      "department_id": "example.operations",
+      "manifest": "subsidiaries/alpha/departments/operations/department.manifest.json"
+    },
+    {
+      "department_id": "example.audit",
+      "manifest": "subsidiaries/alpha/departments/audit/department.manifest.json"
+    },
+    {
+      "department_id": "example.novel",
+      "manifest": "subsidiaries/alpha/departments/novel/department.manifest.json"
+    }
+  ],
+  "model_requirements": {
+    "required": {
+      "text": true,
+      "context_tokens": 8192
+    },
+    "optional": [
+      "tools"
+    ]
+  }
+}

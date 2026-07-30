@@ -1,0 +1,38 @@
+{
+  "schema_version": "department-pack/v0",
+  "department_id": "example.operations",
+  "subsidiary_id": "example.alpha",
+  "group_id": "example.group",
+  "name": "Operations Department",
+  "status": "active",
+  "mission": "Turn approved objectives into controlled workflows, checkpoints, evidence, and deliverable artifacts.",
+  "capabilities": [
+    "task-orchestration",
+    "workflow-execution"
+  ],
+  "paths": {
+    "skills": "subsidiaries/alpha/departments/operations/skills",
+    "workflows": "subsidiaries/alpha/departments/operations/workflows",
+    "evaluations": "subsidiaries/alpha/departments/operations/evaluations"
+  },
+  "executor": {
+    "kind": "template",
+    "workflow": "subsidiaries/alpha/departments/operations/workflows/default.workflow.json"
+  },
+  "execution_policy": {
+    "action": "workflow-execution",
+    "level": "L2",
+    "resource": "group://artifact/operations",
+    "reversible": true,
+    "external_effect": false
+  },
+  "model_requirements": {
+    "required": {
+      "text": true,
+      "tools": "single"
+    },
+    "optional": [
+      "parallel_tools"
+    ]
+  }
+}

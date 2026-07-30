@@ -1,0 +1,31 @@
+{
+  "schema_version": "platform-adapter-policy/v1",
+  "platform_id": "local-shadow",
+  "enabled_modes": ["shadow", "dry_run"],
+  "allowed_actions": ["validate_candidate", "submit_shadow", "withdraw_shadow"],
+  "capabilities": [
+    {
+      "schema_version": "platform-capability/v1",
+      "capability_id": "submit_shadow",
+      "status": "available"
+    },
+    {
+      "schema_version": "platform-capability/v1",
+      "capability_id": "validate_candidate",
+      "status": "available"
+    }
+  ],
+  "per_account_window_actions": 3,
+  "per_account_window_seconds": 3600,
+  "max_attempts_per_action": 5,
+  "max_payload_bytes": 5000000,
+  "allowed_content_kinds": ["novel-chapter"],
+  "retry_ceiling": 4,
+  "retryable_failure_classes": ["transient"],
+  "required_scopes": ["publication:shadow"],
+  "optional_secret_ref_names": [],
+  "status": "active",
+  "not_before": null,
+  "expires_at": null,
+  "policy_version": "1"
+}

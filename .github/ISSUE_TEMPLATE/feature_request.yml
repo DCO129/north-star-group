@@ -1,0 +1,32 @@
+name: Feature request
+description: Propose a new capability for the public-alpha runtime
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature requests are reviewed by the maintainers. They do not
+        automatically become part of the roadmap; acceptance follows the
+        owner/Codex governance path.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem would this feature solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the proposed capability and its public surface.
+    validations:
+      required: true
+  - type: textarea
+    id: boundary-impact
+    attributes:
+      label: Public/private-boundary impact
+      description: Would this change the default-deny export allow-list or surface?
+    validations:
+      required: false

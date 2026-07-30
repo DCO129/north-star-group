@@ -1,0 +1,28 @@
+{
+  "schema_version": "executive-pack/v0",
+  "executive_id": "example.ceo",
+  "group_id": "example.group",
+  "role": "ceo",
+  "status": "active",
+  "human_gateway": "exclusive",
+  "capabilities": [
+    "human-intake",
+    "task-decomposition",
+    "organization-routing",
+    "result-aggregation",
+    "verification",
+    "human-reporting",
+    "clarification",
+    "approval-escalation"
+  ],
+  "model_requirements": {
+    "required": {
+      "text": true,
+      "structured_output": "json"
+    },
+    "optional": [
+      "reasoning",
+      "tools"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+# North-Star-Group v0.1-alpha public candidate
+.env
+*.log
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.venv/
+node_modules/
+.git/
+*.pyc
+secrets/
+private/

@@ -1,0 +1,17 @@
+{
+  "asset_id": "chapter-hook-v1",
+  "asset_path": "shared/knowledge/novel/chapter-hook-v1.json",
+  "content_sha256": "acabcc2b579008c404745a8391624951fc834cbcbb83096f5bd13d41b359aa30",
+  "rights_status": "owned",
+  "schema_version": "novel-knowledge-asset/v1",
+  "source_ref": "group://shared/knowledge/novel/chapter-hook-v1.json",
+  "tags": [
+    "hook",
+    "opening",
+    "craft",
+    "engagement"
+  ],
+  "text": "Distilled chapter-hook guidance (original, not sourced from any book):\n- Start in the middle of action or a small mystery, not with exposition.\n- Plant one unanswered question in the first 100 words to pull the reader forward.\n- Reveal character through a choice in the hook, not through static description.\n- Tie the hook to the chapter's core promise so the payoff lands before the chapter ends.\n- Avoid prologues and weather opens unless they carry immediate stakes.",
+  "title": "Chapter hook craft techniques",
+  "version": "v1"
+}

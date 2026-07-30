@@ -1,0 +1,36 @@
+{
+  "schema_version": "department-workflow/v0",
+  "workflow_id": "example.operations.default",
+  "capability_actions": {
+    "task-orchestration": {
+      "outcome_code": "execution-plan-prepared",
+      "sections": [
+        "work-breakdown",
+        "dependency-order",
+        "responsibility-map",
+        "checkpoints",
+        "completion-gates"
+      ],
+      "quality_checks": [
+        "owner-assigned",
+        "dependencies-ordered",
+        "completion-gates-defined"
+      ]
+    },
+    "workflow-execution": {
+      "outcome_code": "workflow-run-prepared",
+      "sections": [
+        "inputs",
+        "execution-steps",
+        "evidence-capture",
+        "artifact-delivery",
+        "rollback-or-escalation"
+      ],
+      "quality_checks": [
+        "inputs-resolved",
+        "evidence-captured",
+        "artifact-addressable"
+      ]
+    }
+  }
+}

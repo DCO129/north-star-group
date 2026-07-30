@@ -1,0 +1,17 @@
+{
+  "asset_id": "scene-pacing-v1",
+  "asset_path": "shared/knowledge/novel/scene-pacing-v1.json",
+  "content_sha256": "57cc5a40b8ca5f6ebe3b6472126b121e622fe64e313198a8bcade6e6e45e09d2",
+  "rights_status": "owned",
+  "schema_version": "novel-knowledge-asset/v1",
+  "source_ref": "group://shared/knowledge/novel/scene-pacing-v1.json",
+  "tags": [
+    "pacing",
+    "scene",
+    "craft",
+    "rhythm"
+  ],
+  "text": "Distilled scene-pacing guidance (original, not sourced from any book):\n- Open each scene at the latest possible moment before the central conflict appears.\n- Alternate tension and breath: after a high-stakes beat, follow with one quieter scene so readers can reset.\n- End scenes on a micro-reversal or a raised question, never on a settled state.\n- Vary sentence length with stakes: short clauses under pressure, longer prose for worldbuilding.\n- Track every scene's goal, conflict, and outcome so each scene earns its place in the arc.",
+  "title": "Scene pacing craft techniques",
+  "version": "v1"
+}

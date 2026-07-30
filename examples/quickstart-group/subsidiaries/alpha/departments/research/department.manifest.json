@@ -1,0 +1,39 @@
+{
+  "schema_version": "department-pack/v0",
+  "department_id": "example.research",
+  "subsidiary_id": "example.alpha",
+  "group_id": "example.group",
+  "name": "Research Department",
+  "status": "active",
+  "mission": "Collect evidence, compare alternatives, and convert verified findings into reusable group knowledge.",
+  "capabilities": [
+    "research",
+    "knowledge-curation"
+  ],
+  "paths": {
+    "skills": "subsidiaries/alpha/departments/research/skills",
+    "workflows": "subsidiaries/alpha/departments/research/workflows",
+    "evaluations": "subsidiaries/alpha/departments/research/evaluations"
+  },
+  "executor": {
+    "kind": "template",
+    "workflow": "subsidiaries/alpha/departments/research/workflows/default.workflow.json"
+  },
+  "execution_policy": {
+    "action": "research",
+    "level": "L1",
+    "resource": "group://knowledge/research",
+    "reversible": true,
+    "external_effect": false,
+    "budget_category": "model_api"
+  },
+  "model_requirements": {
+    "required": {
+      "text": true,
+      "structured_output": "json"
+    },
+    "optional": [
+      "web_search"
+    ]
+  }
+}

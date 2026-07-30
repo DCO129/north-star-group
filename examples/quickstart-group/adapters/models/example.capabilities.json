@@ -1,0 +1,19 @@
+{
+  "schema_version": "model-capability/v0",
+  "provider": "replaceable-provider",
+  "model": "replaceable-model",
+  "driver": "openai-compatible",
+  "endpoint_ref": "env:MODEL_BASE_URL",
+  "secret_refs": [
+    "env:MODEL_API_KEY"
+  ],
+  "capabilities": {
+    "text": true,
+    "tools": "parallel",
+    "structured_output": "json_schema",
+    "context_tokens": 32768
+  },
+  "certification": {
+    "status": "passed"
+  }
+}

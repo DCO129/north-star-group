@@ -1,0 +1,22 @@
+{
+  "schema_version": "model-capability/v0",
+  "provider": "deepseek",
+  "model": "deepseek-v4-pro",
+  "driver": "deepseek-openai-compatible-v0",
+  "endpoint_ref": "builtin:https://api.deepseek.com",
+  "secret_refs": [
+    "env:DEEPSEEK_API_KEY"
+  ],
+  "capabilities": {
+    "text": true,
+    "tools": "single",
+    "structured_output": "json",
+    "context_tokens": 1000000,
+    "reasoning_controls": true
+  },
+  "certification": {
+    "status": "passed",
+    "certified_at": "2026-07-21T17:23:16+08:00",
+    "report": "evaluations/deepseek-v4-pro.certification.json"
+  }
+}

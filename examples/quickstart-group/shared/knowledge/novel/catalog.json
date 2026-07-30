@@ -1,0 +1,17 @@
+{
+  "schema_version": "novel-knowledge-catalog/v1",
+  "assets": [
+    {
+      "asset_id": "scene-pacing-v1",
+      "asset_path": "shared/knowledge/novel/scene-pacing-v1.json",
+      "version": "v1",
+      "rights_status": "owned"
+    },
+    {
+      "asset_id": "chapter-hook-v1",
+      "asset_path": "shared/knowledge/novel/chapter-hook-v1.json",
+      "version": "v1",
+      "rights_status": "owned"
+    }
+  ]
+}

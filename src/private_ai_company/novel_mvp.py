@@ -21,7 +21,7 @@ DAG nodes are never executed twice after object destruction and resume.
 
 from __future__ import annotations
 
-import hashlib
+from ._hashing import sha256_text
 import json
 import re
 from dataclasses import dataclass
@@ -35,7 +35,6 @@ from .dag import DagNodeSpec, DepartmentDagExecutor, DurableDagRunner
 from .executors import DepartmentExecutor, DepartmentResult, ExecutionRequest
 from .state_spine import RestartSafeStateSpine, StateSpineError
 from .timebase import authoritative_timestamp
-
 
 # --------------------------------------------------------------------------- #
 # Public schemas (contract §7)
@@ -68,7 +67,6 @@ NOVEL_DEPENDENCY_EDGES: dict[str, tuple[str, ...]] = {
 DEPARTMENT_ID = 'example.novel'
 NOVEL_DEPT_ID = 'dept-novel'
 
-
 # --------------------------------------------------------------------------- #
 # Stable blocking codes (contract §11)
 # --------------------------------------------------------------------------- #
@@ -87,7 +85,6 @@ CODE_ARTIFACT_DUPLICATE = 'novel-mvp-artifact-duplicate'
 CODE_RESUME_CONFLICT = 'novel-mvp-resume-conflict'
 CODE_EXTERNAL_EFFECT_FORBIDDEN = 'novel-mvp-external-effect-forbidden'
 
-
 class NovelMvpError(Exception):
     '''Bounded novel MVP error carrying a stable blocking code.'''
 
@@ -95,7 +92,6 @@ class NovelMvpError(Exception):
         super().__init__(f'{code}: {message}')
         self.code = code
         self.message = message
-
 
 # --------------------------------------------------------------------------- #
 # Shared helpers
@@ -106,19 +102,12 @@ _REQUEST_DIR = 'runtime/novel-mvp/requests'
 _SPINE_DIR = 'runtime/novel-mvp/spine'
 _REGISTRY_DIR = 'runtime/novel-mvp/runs'
 
-
-def sha256_text(text: str) -> str:
-    return hashlib.sha256(text.encode('utf-8')).hexdigest()
-
-
 def canonical_json(value: Any) -> str:
     return json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(',', ':'))
-
 
 def _slug(value: str) -> str:
     cleaned = re.sub(r'[^a-z0-9._-]', '-', str(value).lower())
     return cleaned[:50].strip('-') or 'x'
-
 
 def validate_novel_mvp_request(data: Any) -> dict[str, Any]:
     '''Validate and normalize a novel-mvp-request/v1 payload (contract §6.2).'''
@@ -219,7 +208,6 @@ def validate_novel_mvp_request(data: Any) -> dict[str, Any]:
         'writer_context_sha256': writer_context_sha256,
     }
 
-
 def _validate_writer_context(wc: object, wc_sha256: object) -> None:
     '''Bounded, hash-checked validation of an optional writer_context (defect 2).
 
@@ -257,7 +245,6 @@ def _validate_writer_context(wc: object, wc_sha256: object) -> None:
         if sha256_text(canonical_json(wc)) != wc_sha256:
             raise NovelMvpError(CODE_CONTEXT_HASH_MISMATCH, 'writer_context_sha256 mismatch')
 
-
 def _validate_input_refs(input_refs: Sequence[str]) -> str:
     '''Exactly one group-file reference is allowed for P0-4 (contract §6.1).'''
     refs = [str(r).strip() for r in (input_refs or [])]
@@ -275,14 +262,12 @@ def _validate_input_refs(input_refs: Sequence[str]) -> str:
         )
     return ref
 
-
 def _resolve_group_file(group_root: Path, ref: str) -> Path:
     relative = ref[len(_REF_PREFIX):]
     try:
         return _root.resolve_portable_path(group_root, relative, 'input_ref')
     except Exception as exc:  # pragma: no cover - defensive
         raise NovelMvpError(CODE_INPUT_REF_INVALID, f'invalid input reference: {exc}') from exc
-
 
 # --------------------------------------------------------------------------- #
 # Draft provider (contract §7)
@@ -292,7 +277,6 @@ class DraftProvider(Protocol):
 
     def draft(self, request: Mapping[str, object], context: Mapping[str, object]) -> Mapping[str, object]:
         ...
-
 
 class DeterministicLocalDraftProvider:
     '''Deterministic, model-free local chapter draft provider.
@@ -397,7 +381,6 @@ class DeterministicLocalDraftProvider:
         if len(prose) > max_chars:
             prose = prose[:max_chars].rstrip()
         return prose
-
 
 # --------------------------------------------------------------------------- #
 # Business executor (contract §7, §8)
@@ -955,14 +938,12 @@ class NovelBusinessExecutor:
                 return str(value.get('artifact_id'))
         return None
 
-
 def _looks_like_checklist(prose: str) -> bool:
     lines = [line.strip() for line in prose.splitlines() if line.strip()]
     if len(lines) < 3:
         return False
     bullet_lines = sum(1 for line in lines if line[:1] in ('-', '*', '•') or re.match(r'^\d+[\.、]', line))
     return bullet_lines >= max(2, len(lines) // 2)
-
 
 # --------------------------------------------------------------------------- #
 # Service layer (contract §7, §9)
@@ -1222,7 +1203,6 @@ class NovelMvpService:
         reg_path = Path(target_root) / _REGISTRY_DIR / f'{_slug(task_id)}.json'
         reg_path.parent.mkdir(parents=True, exist_ok=True)
         reg_path.write_text(json.dumps(registry, ensure_ascii=False, indent=2), encoding='utf-8')
-
 
 # --------------------------------------------------------------------------- #
 # Minimal local API surface (contract §10)

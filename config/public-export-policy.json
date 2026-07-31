@@ -21,6 +21,7 @@
       "tests/smoke_public_alpha.py",
       "tests/test_public_alpha_ci_contract.py",
       "tests/test_g1_5_publication_candidate.py",
+      "tests/test_hashing.py",
       "config/public-export-policy.json",
       "LICENSE",
       "CONTRIBUTING.md",

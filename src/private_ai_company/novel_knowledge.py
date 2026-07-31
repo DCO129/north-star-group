@@ -11,7 +11,7 @@ Frozen contract:
 
 from __future__ import annotations
 
-import hashlib
+from ._hashing import sha256_text
 import json
 import math
 import re
@@ -55,7 +55,6 @@ CODE_RESULT_INVALID = "knowledge-result-invalid"
 
 PROJECT_ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]{2,63}$")
 
-
 # --------------------------------------------------------------------------
 # Helpers
 # --------------------------------------------------------------------------
@@ -64,14 +63,8 @@ def estimated_tokens(text: str) -> int:
     """Deterministic conservative token estimate (contract section 8)."""
     return max(1, math.ceil(len(text.encode("utf-8")) / 3))
 
-
-def sha256_text(text: str) -> str:
-    return hashlib.sha256(text.encode("utf-8")).hexdigest()
-
-
 def canonical_json(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True)
-
 
 def _clean_str(value: Any, field_name: str, *, required: bool = False, max_length: int = 4000) -> str:
     result = str(value or "").strip()
@@ -80,7 +73,6 @@ def _clean_str(value: Any, field_name: str, *, required: bool = False, max_lengt
     if len(result) > max_length:
         raise ValueError(f"{field_name} must be at most {max_length} characters")
     return result
-
 
 def _clean_str_list(value: Any, field_name: str, *, min_items: int = 0, max_items: int = 12, max_length: int = 200) -> list[str]:
     if value is None:
@@ -98,13 +90,11 @@ def _clean_str_list(value: Any, field_name: str, *, min_items: int = 0, max_item
         raise ValueError(f"{field_name} must contain at most {max_items} items")
     return out
 
-
 def _safe_project_id(value: Any) -> str:
     candidate = _clean_str(value, "project_id", max_length=64).lower()
     if not PROJECT_ID_RE.fullmatch(candidate):
         raise ValueError("project_id must match ^[a-z0-9][a-z0-9-]{2,63}$")
     return candidate
-
 
 def _normalize_terms(terms: list[str]) -> list[str]:
     out: list[str] = []
@@ -114,7 +104,6 @@ def _normalize_terms(terms: list[str]) -> list[str]:
             out.append(norm)
     return out
 
-
 def _match_score(terms: list[str], snippet: "KnowledgeSnippet") -> int:
     haystack = " ".join([snippet.title, " ".join(snippet.tags), snippet.text]).lower()
     score = 0
@@ -122,7 +111,6 @@ def _match_score(terms: list[str], snippet: "KnowledgeSnippet") -> int:
         if term and term in haystack:
             score += 1
     return score
-
 
 # --------------------------------------------------------------------------
 # Errors
@@ -134,7 +122,6 @@ class KnowledgeAdapterError(Exception):
     def __init__(self, code: str, message: str = "") -> None:
         super().__init__(message or code)
         self.code = code
-
 
 # --------------------------------------------------------------------------
 # Schemas (frozen contract section 5)
@@ -165,7 +152,6 @@ class ChapterContextRequest:
             data["job_id"] = self.job_id
         return data
 
-
 @dataclass
 class KnowledgeQuery:
     schema_version: str = QUERY_SCHEMA
@@ -192,7 +178,6 @@ class KnowledgeQuery:
             "token_budget": self.token_budget,
             "query_sha256": self.query_sha256,
         }
-
 
 @dataclass
 class KnowledgeSnippet:
@@ -223,7 +208,6 @@ class KnowledgeSnippet:
             "score_milli": self.score_milli,
         }
 
-
 @dataclass
 class KnowledgeResult:
     schema_version: str = RESULT_SCHEMA
@@ -242,7 +226,6 @@ class KnowledgeResult:
             "snippets": [s.to_dict() for s in self.snippets],
             "blocking_codes": list(self.blocking_codes),
         }
-
 
 @dataclass
 class KnowledgeCitation:
@@ -268,7 +251,6 @@ class KnowledgeCitation:
             "estimated_tokens": self.estimated_tokens,
             "use_position": self.use_position,
         }
-
 
 @dataclass
 class ChapterKnowledgeContext:
@@ -309,7 +291,6 @@ class ChapterKnowledgeContext:
             "blocking_codes": list(self.blocking_codes),
         }
 
-
 @dataclass
 class ChapterContextPackage:
     schema_version: str = PACKAGE_SCHEMA
@@ -332,7 +313,6 @@ class ChapterContextPackage:
             "external_knowledge_accessed": self.external_knowledge_accessed,
             "artifact_paths": dict(self.artifact_paths),
         }
-
 
 # --------------------------------------------------------------------------
 # Request validation
@@ -377,7 +357,6 @@ def validate_chapter_context_request(data: Any) -> ChapterContextRequest:
         job_id=job_id,
     )
 
-
 # --------------------------------------------------------------------------
 # Query / context / package builders
 # --------------------------------------------------------------------------
@@ -396,7 +375,6 @@ def build_knowledge_query(request: ChapterContextRequest, job_id: str) -> Knowle
     query.query_sha256 = sha256_text(canonical_json(query.to_dict()))
     return query
 
-
 def build_citation(snippet: KnowledgeSnippet, index: int) -> KnowledgeCitation:
     return KnowledgeCitation(
         snippet_id=snippet.snippet_id,
@@ -408,7 +386,6 @@ def build_citation(snippet: KnowledgeSnippet, index: int) -> KnowledgeCitation:
         estimated_tokens=estimated_tokens(snippet.text),
         use_position=f"{INJECTION_TARGET}#{index + 1}",
     )
-
 
 def build_chapter_context(
     *,
@@ -476,7 +453,6 @@ def build_chapter_context(
         blocking_codes=[],
     )
 
-
 def build_chapter_context_package(
     *,
     request: ChapterContextRequest,
@@ -494,14 +470,12 @@ def build_chapter_context_package(
         artifact_paths=artifact_paths,
     )
 
-
 # --------------------------------------------------------------------------
 # Adapter
 # --------------------------------------------------------------------------
 
 class KnowledgeAdapter(Protocol):
     def query(self, query: KnowledgeQuery) -> KnowledgeResult: ...
-
 
 class LocalFileKnowledgeAdapter:
     """File-backed KnowledgeAdapter spike.

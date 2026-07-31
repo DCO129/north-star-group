@@ -1,5 +1,5 @@
 {
-  "file_count": 142,
+  "file_count": 144,
   "files": [
     {
       "length": 1094,
@@ -82,9 +82,9 @@
       "sha256": "3a17b9fd4546df47731d79e2e1a2dd2a0357ba7ef0ff6a37f7b2f2075785a295"
     },
     {
-      "length": 3056,
+      "length": 3087,
       "rel_path": "config/public-export-policy.json",
-      "sha256": "43677aac39b20e6e6285570a4bb02b5843262ebaad31abae37b83680263fe594"
+      "sha256": "71cad5521b939b282dcf3dd35cecaa115277750474cbec95004d171ecdd487f8"
     },
     {
       "length": 6393,
@@ -462,6 +462,11 @@
       "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
     },
     {
+      "length": 192,
+      "rel_path": "src/private_ai_company/_hashing.py",
+      "sha256": "bca57b072baeaa5ae8121a1220396c3d6748185349a3a2a87a7e8d80800d5b70"
+    },
+    {
       "length": 3198,
       "rel_path": "src/private_ai_company/acceptance.py",
       "sha256": "4f1ac84459068ac7e7929e98cc101e184378e0a8d0ea04bd9bef840316e75f09"
@@ -517,9 +522,9 @@
       "sha256": "97e5ce331cc981e8926b527666d1ac67071c18e878903e34af180ff2e2010ef5"
     },
     {
-      "length": 49003,
+      "length": 48903,
       "rel_path": "src/private_ai_company/economic_ledger.py",
-      "sha256": "6d2f29b31b72aa74d06215af3e5762cc7fea7fbbaad4e8fbfce52f6a632d000f"
+      "sha256": "dc2ceccebb01a1d833676b3ee4c1611cb72c6138b8ee6a9fcba7c69c8569fe22"
     },
     {
       "length": 5706,
@@ -552,19 +557,19 @@
       "sha256": "5a4c60358902d02fb4ef2637dfce6751667750ef206bd3a49790a80ade39b5fd"
     },
     {
-      "length": 30302,
+      "length": 30894,
       "rel_path": "src/private_ai_company/novel_knowledge.py",
-      "sha256": "e72ac211c33f078822e2db750d29fb4acc0cbcd6189a73687bb2c969c8f45fe9"
+      "sha256": "8d8c12717b23c48892cb5f7b86b71d6f3d65deeedb7198e66f352b1d08f7ad4b"
     },
     {
-      "length": 57024,
+      "length": 58208,
       "rel_path": "src/private_ai_company/novel_mvp.py",
-      "sha256": "1c82ceecd7b5f09ab18630f8b4e10ca44be42020a37820cab1157f277a79af53"
+      "sha256": "9d154ecccb95c28d477521b9d9a8f95d75987051ff0ee8f11648d3f446831059"
     },
     {
-      "length": 83845,
+      "length": 85470,
       "rel_path": "src/private_ai_company/novel_operations.py",
-      "sha256": "d037b4a23bbbbde319c19ecfccf0a290521fa6f17c1339cd8fe8c81aae7a617c"
+      "sha256": "e1f286a94508fbdac39b437fd818b93a9904f02dc5233c6751e39205b5547a79"
     },
     {
       "length": 48192,
@@ -587,9 +592,9 @@
       "sha256": "b6cfab2cf2524cf995c345df3246b0f2bdea21711220edfe700b6058162fbf4c"
     },
     {
-      "length": 28999,
+      "length": 29604,
       "rel_path": "src/private_ai_company/platform_adapter.py",
-      "sha256": "ff81fd8d12a4545c11790cf15144abf5b556ad6bbcde67176ccee710eb1a852a"
+      "sha256": "9b971b9c1d043bd58c59da910eef0c495bd72fe89f9b7b1269bafa07433cd300"
     },
     {
       "length": 78252,
@@ -672,6 +677,11 @@
       "sha256": "305b2194aedd399939097e0bd087b56041fb28b2ee9c1bbf8debf9a926fdcd19"
     },
     {
+      "length": 3867,
+      "rel_path": "tests/test_hashing.py",
+      "sha256": "3a75770b6386f7827e47fefbfc949e5fe14f252ed354f751aeab898b97e5e491"
+    },
+    {
       "length": 2454,
       "rel_path": "tests/test_public_alpha_ci_contract.py",
       "sha256": "adf237894414624ac91a0ab47952d602f63bea3dc9eb41eea5b7cbf23772bf48"
@@ -704,7 +714,7 @@
     {
       "length": 726,
       "rel_path": "SCAN_RECEIPT.json",
-      "sha256": "9f2852fa239abce512a176a05d31942f7dbdbc813a1a5838f22b67ce3512f232"
+      "sha256": "1d03dbe94e901754b30178ea04ce4fbe40541cf429d2c8809c9ffed5e68ec728"
     },
     {
       "length": 499,

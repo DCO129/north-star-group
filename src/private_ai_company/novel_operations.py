@@ -33,7 +33,7 @@ Frozen schemas (contract §4 / execution order §3):
 
 from __future__ import annotations
 
-import hashlib
+from ._hashing import sha256_text
 import json
 import os
 import re
@@ -62,7 +62,6 @@ from .providers import ModelMessage, ModelProvider, ModelRequest
 from .publication import PublicationService
 from decimal import Decimal
 from .budget import ModelRate
-
 
 # --------------------------------------------------------------------------- #
 # Frozen schema versions (contract §4 / execution order §3)
@@ -113,7 +112,6 @@ FULL_WINDOW_TRIGGERS = (
     'explicit-responsible-party-request',
 )
 
-
 class NovelOperationsError(Exception):
     '''Bounded novel-operations error carrying a stable blocking code.'''
 
@@ -122,26 +120,19 @@ class NovelOperationsError(Exception):
         self.code = code
         self.message = message
 
-
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
-def sha256_text(text: str) -> str:
-    return hashlib.sha256(text.encode('utf-8')).hexdigest()
-
 
 def canonical_json(value: Any) -> str:
     return json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(',', ':'))
 
-
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
-
 
 def _slug(value: str) -> str:
     cleaned = re.sub(r'[^a-z0-9._-]', '-', str(value).lower())
     return cleaned[:50].strip('-') or 'x'
-
 
 def _op_scratch(op_id: str) -> str:
     '''Stable short (8 hex) key for scratch work-root directories.
@@ -154,7 +145,6 @@ def _op_scratch(op_id: str) -> str:
     derived from ``op_id`` so it is stable across restarts/replays.
     '''
     return sha256_text(str(op_id))[:8]
-
 
 def _copy_tree_robust(src: Path, dst: Path) -> None:
     '''Recursively copy a directory, skipping unreadable/broken sources.'''
@@ -170,12 +160,10 @@ def _copy_tree_robust(src: Path, dst: Path) -> None:
         except OSError:
             continue
 
-
 def _resolve_group_file(group_root: Path, ref: str) -> Path:
     from .root import resolve_portable_path
 
     return resolve_portable_path(group_root, ref[len('group-file:'):], 'operations_ref')
-
 
 # --------------------------------------------------------------------------- #
 # Knowledge seeding helper (contract §4.1)
@@ -296,12 +284,10 @@ def seed_knowledge(
     )
     return sb_dir / 'current.json'
 
-
 # --------------------------------------------------------------------------- #
 # Release redraft + filler-slot sabotage removed (N1-1A Fix B): release now
 # reuses the already-audited buffered chapter bytes with ZERO draft calls.
 # --------------------------------------------------------------------------- #
-
 
 # --------------------------------------------------------------------------- #
 # Call-receipt sink (N1-2A provenance chain)
@@ -387,7 +373,6 @@ class CallReceiptSink:
     @property
     def total_tokens(self) -> int:
         return self._total_tokens
-
 
 # --------------------------------------------------------------------------- #
 # NovelOperationsService

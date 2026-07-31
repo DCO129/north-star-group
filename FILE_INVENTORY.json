@@ -32,9 +32,9 @@
       "sha256": "ec71cf4f478565c9b7c9919c2218e38ff5960f10e49dfa5d137b1ae238c76cab"
     },
     {
-      "length": 1773,
+      "length": 2961,
       "rel_path": "CHANGELOG.md",
-      "sha256": "1714b332e052a7ab2e074a96d2d293cf0174332b2c4f22f2cbd4482421126f36"
+      "sha256": "0adf51b76f4c2cdbf5d84537da0d048af484afc94508b4da4bf1d0a8e2eb994d"
     },
     {
       "length": 1655,
@@ -42,9 +42,9 @@
       "sha256": "cc0b2917155e74fe087a26c6a0eb2e946b5d92241375dc720fce65bcee8579d6"
     },
     {
-      "length": 2826,
+      "length": 5998,
       "rel_path": "CONTRIBUTING.md",
-      "sha256": "bbe2e7bb1b743f6a9425ecc613c9cd9500b4336288a5e7400875b98e2be44982"
+      "sha256": "6ffb852b71cbf6e75a6d6b4c97e8a7320147b53ca28f96e2af56fec54ce7083d"
     },
     {
       "length": 11364,
@@ -52,14 +52,14 @@
       "sha256": "d34ff3ac18fb886b224d9afabd9b5ce1fe38e6cc000a4477bae47c76da848dd8"
     },
     {
-      "length": 7307,
+      "length": 25513,
       "rel_path": "README.md",
-      "sha256": "e2395a82acf696826f2e4db381701f84e0ff32c7191884bff12213f95ab35336"
+      "sha256": "6850f5dc88ce9c17bf4c844d20ce4360756f9a8ee0dadac18846aff60e82f2c9"
     },
     {
-      "length": 1711,
+      "length": 6369,
       "rel_path": "ROADMAP.md",
-      "sha256": "1dd0f8486fce4c81a2703a3a9db7e9132b1d7672c05ba34d2fba95e508b50ed7"
+      "sha256": "7ef3366ed39df75f579777882a1ff7c1533359171fbc601a36f06e08bbd7b412"
     },
     {
       "length": 1551,
@@ -87,14 +87,14 @@
       "sha256": "43677aac39b20e6e6285570a4bb02b5843262ebaad31abae37b83680263fe594"
     },
     {
-      "length": 2239,
+      "length": 6388,
       "rel_path": "docs/public/ARCHITECTURE.md",
-      "sha256": "d59d37014098f79d07d28fefa050398b3e57631b7d37272902c30ebc87a55120"
+      "sha256": "d685f89fde1ad429cabfe435352c921967ee3cfa6309630a768efac8e5b661f8"
     },
     {
-      "length": 478,
+      "length": 1243,
       "rel_path": "docs/public/CONTRIBUTING.md",
-      "sha256": "83fb26ec2a21039cd582589861eff355be9f71672f4a128c508feb6683f7344f"
+      "sha256": "8f61fdd3bc9e787d82f0361911cac33da5f02f399128c8efa50397a9763bfa28"
     },
     {
       "length": 1239,
@@ -102,19 +102,19 @@
       "sha256": "778bf3a7e0661437305836be2da284d6088da5441f2a530e69e04304d09ba918"
     },
     {
-      "length": 1905,
+      "length": 6016,
       "rel_path": "docs/public/PUBLIC_PRIVATE_BOUNDARY.md",
-      "sha256": "0b15e54b1ec57afbc31bf51710df3ac3d9072f23ee9e81bdd35f6b065175e3f6"
+      "sha256": "b31be666510b2b161a9bd2f0931d72305dc35ceca23b28fb30666bb7981521a8"
     },
     {
-      "length": 3865,
+      "length": 6164,
       "rel_path": "docs/public/README.quickstart.md",
-      "sha256": "3a7c4723973cea7d240b33eef6a6d6994a8ec3ff6396efa622d4d6f02dbf7d40"
+      "sha256": "3ba80fac662b93770656f256089f13ad52b2e8633ee4f94e64faca7b14d0b55f"
     },
     {
-      "length": 1383,
+      "length": 3663,
       "rel_path": "docs/public/ROADMAP_GOVERNANCE.md",
-      "sha256": "d39d9c5076bd89ae5e0952196cb2255dd8462340a5565a3392e41b696e9e3dae"
+      "sha256": "943e2ff74f5ca64620d0a708b389a7bad0f8c7b964cf32a55bad1ff6c20870d5"
     },
     {
       "length": 542,

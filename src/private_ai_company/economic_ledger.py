@@ -19,7 +19,6 @@ Design invariants (contract W1-1 §2, §5, §6):
 
 from __future__ import annotations
 
-from ._hashing import sha256_text
 import json
 import os
 import re
@@ -29,6 +28,8 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 from .timebase import authoritative_timestamp
+from ._hashing import sha256_text
+
 
 # --------------------------------------------------------------------------- #
 # Stable blocking codes (contract §11)
@@ -53,6 +54,7 @@ ECON_PLATFORM_EXTERNAL_FORBIDDEN = 'economic-platform-external-forbidden'
 ECON_SETTLEMENT_EVIDENCE_REQUIRED = 'economic-settlement-evidence-required'
 ECON_EXPORT_INCOMPLETE = 'economic-export-incomplete'
 ECON_RESTORE_CONFLICT = 'economic-restore-conflict'
+
 
 # --------------------------------------------------------------------------- #
 # Frozen schema versions (contract §6)
@@ -82,6 +84,7 @@ PAYLOAD_SCHEMAS = {
 
 _ID_RE = re.compile(r'^(entry|work|ver|plat|res|settle|cost)-[a-z0-9][a-z0-9._-]{0,63}$')
 
+
 class EconomicLedgerError(Exception):
     '''Bounded economic-ledger error carrying a stable blocking code.'''
 
@@ -90,12 +93,13 @@ class EconomicLedgerError(Exception):
         self.code = code
         self.message = message
 
+
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
-
 def canonical_json(value: Any) -> str:
     return json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(',', ':'))
+
 
 def _validate_id(value: str, *, kind: str = 'id') -> str:
     if not isinstance(value, str) or not _ID_RE.fullmatch(value):
@@ -104,9 +108,11 @@ def _validate_id(value: str, *, kind: str = 'id') -> str:
         )
     return value
 
+
 def _derive_entry_id(idempotency_key: str, payload_sha256: str) -> str:
     digest = sha256_text(f'{idempotency_key}|{payload_sha256}')
     return 'entry-' + digest[:32]
+
 
 # --------------------------------------------------------------------------- #
 # Budget policy (contract §6.2)
@@ -184,6 +190,7 @@ class EconomicBudgetPolicy:
         )
         policy.validate()
         return policy
+
 
 # --------------------------------------------------------------------------- #
 # Unified economic ledger (contract §5, §7)
@@ -710,6 +717,7 @@ class EconomicLedger:
         ledger.rebuild()
         return ledger
 
+
 # --------------------------------------------------------------------------- #
 # Budget truth (contract §7, §8)
 # --------------------------------------------------------------------------- #
@@ -1090,6 +1098,7 @@ class EconomicBudgetTruth:
                 'by_category': per_category,
                 'policy': self.policy.to_dict(),
             }
+
 
 # --------------------------------------------------------------------------- #
 # Legacy budget ledger adapter (contract §7, §9.1)

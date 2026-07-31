@@ -522,9 +522,9 @@
       "sha256": "97e5ce331cc981e8926b527666d1ac67071c18e878903e34af180ff2e2010ef5"
     },
     {
-      "length": 48903,
+      "length": 48921,
       "rel_path": "src/private_ai_company/economic_ledger.py",
-      "sha256": "dc2ceccebb01a1d833676b3ee4c1611cb72c6138b8ee6a9fcba7c69c8569fe22"
+      "sha256": "4c254c7a07bfc1c1d337222fb3962af4562e3d747643890e5c52941603ba2085"
     },
     {
       "length": 5706,
@@ -557,19 +557,19 @@
       "sha256": "5a4c60358902d02fb4ef2637dfce6751667750ef206bd3a49790a80ade39b5fd"
     },
     {
-      "length": 30894,
+      "length": 30225,
       "rel_path": "src/private_ai_company/novel_knowledge.py",
-      "sha256": "8d8c12717b23c48892cb5f7b86b71d6f3d65deeedb7198e66f352b1d08f7ad4b"
+      "sha256": "e64caf7d9e6fa9fd7118a1124cfed68a76611d08950d721ceb73e10c75310bf8"
     },
     {
-      "length": 58208,
+      "length": 56946,
       "rel_path": "src/private_ai_company/novel_mvp.py",
-      "sha256": "9d154ecccb95c28d477521b9d9a8f95d75987051ff0ee8f11648d3f446831059"
+      "sha256": "24f1302e68eafa06a268e44f1344a551822a742fe32682631fad1d94751dc147"
     },
     {
-      "length": 85470,
+      "length": 83767,
       "rel_path": "src/private_ai_company/novel_operations.py",
-      "sha256": "e1f286a94508fbdac39b437fd818b93a9904f02dc5233c6751e39205b5547a79"
+      "sha256": "26ddbd87d1d24c785627cebcc4883826e078f4b839315890f3f3ce1b8ca15eac"
     },
     {
       "length": 48192,
@@ -592,9 +592,9 @@
       "sha256": "b6cfab2cf2524cf995c345df3246b0f2bdea21711220edfe700b6058162fbf4c"
     },
     {
-      "length": 29604,
+      "length": 28922,
       "rel_path": "src/private_ai_company/platform_adapter.py",
-      "sha256": "9b971b9c1d043bd58c59da910eef0c495bd72fe89f9b7b1269bafa07433cd300"
+      "sha256": "aed8d1b791addbe539c945072649d07b8f9fd9c34f106a43bec56dd25675be29"
     },
     {
       "length": 78252,

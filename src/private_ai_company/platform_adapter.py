@@ -12,13 +12,14 @@ default transport is deny-all; tests inject a deterministic fake transport.
 
 from __future__ import annotations
 
-from ._hashing import sha256_text
 import json
 import re
 import threading
 import time
 from dataclasses import dataclass, field
 from typing import Any, Mapping, Protocol, Sequence
+
+from ._hashing import sha256_text
 
 # --------------------------------------------------------------------------- #
 # Frozen schema versions (contract §6)
@@ -134,12 +135,13 @@ class PlatformAdapterError(Exception):
         self.code = code
         self.message = message
 
+
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
-
 def canonical_json(value: Any) -> str:
     return json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(',', ':'))
+
 
 def validate_id(value: str, *, kind: str = 'id') -> str:
     if not isinstance(value, str) or not _ID_RE.fullmatch(value):
@@ -148,6 +150,7 @@ def validate_id(value: str, *, kind: str = 'id') -> str:
         )
     return value
 
+
 def validate_idempotency_key(value: str) -> str:
     if not isinstance(value, str) or not _IDEMPOTENCY_RE.fullmatch(value):
         raise PlatformAdapterError(
@@ -155,6 +158,7 @@ def validate_idempotency_key(value: str) -> str:
             f'idempotency key must match {_IDEMPOTENCY_RE.pattern}: {value!r}',
         )
     return value
+
 
 def validate_local_ref(value: str, *, kind: str = 'ref') -> str:
     '''Target-relative local reference only; absolute paths / traversal block.'''
@@ -170,6 +174,7 @@ def validate_local_ref(value: str, *, kind: str = 'ref') -> str:
         )
     return value
 
+
 def detect_raw_secret(*values: object) -> str | None:
     '''Return the offending fragment if a raw-secret-like value is detected.'''
     for value in values:
@@ -178,6 +183,7 @@ def detect_raw_secret(*values: object) -> str | None:
         if _SECRET_HINT_RE.search(value):
             return value
     return None
+
 
 # --------------------------------------------------------------------------- #
 # Transport boundary (injected; production default is deny-all)
@@ -201,6 +207,7 @@ class ShadowTransport(Protocol):
         '''
         ...
 
+
 _OUTCOME_RESULTS: dict[str, dict[str, str]] = {
     'success': {'status': 'ok', 'failure_class': FAILURE_NONE, 'reason': 'shadow-accepted'},
     'timeout': {'status': 'error', 'failure_class': FAILURE_TRANSIENT, 'reason': 'timeout'},
@@ -210,6 +217,7 @@ _OUTCOME_RESULTS: dict[str, dict[str, str]] = {
     'connection': {'status': 'error', 'failure_class': FAILURE_TRANSIENT, 'reason': 'connection-reset'},
     'permanent_reject': {'status': 'rejected', 'failure_class': FAILURE_TERMINAL, 'reason': 'policy-rejected'},
 }
+
 
 class FakeShadowTransport:
     '''Deterministic, injected fake transport. Never touches a socket/browser.
@@ -277,6 +285,7 @@ class FakeShadowTransport:
             'evidence': {'outcome': outcome, 'reason': spec['reason']},
         }
 
+
 class DenyAllShadowTransport:
     '''Production default. Blocks every shadow call before any external effect.'''
 
@@ -286,11 +295,13 @@ class DenyAllShadowTransport:
             'production deny-all transport blocks all shadow calls',
         )
 
+
 def classify_transport_failure(result: Mapping[str, object]) -> str:
     raw = result.get('failure_class')
     if raw in (FAILURE_TRANSIENT, FAILURE_TERMINAL, FAILURE_NONE):
         return str(raw)
     return FAILURE_TERMINAL
+
 
 # --------------------------------------------------------------------------- #
 # Policy / capability / lease
@@ -313,6 +324,7 @@ class PlatformCapability:
             capability_id=str(value.get('capability_id') or ''),
             status=str(value.get('status') or 'unknown'),
         )
+
 
 @dataclass(frozen=True)
 class PlatformPolicy:
@@ -398,6 +410,7 @@ class PlatformPolicy:
     def retryable(self, failure_class: str) -> bool:
         return failure_class in self.retryable_failure_classes
 
+
 @dataclass(frozen=True)
 class PlatformAuthorizationLease:
     lease_id: str
@@ -466,6 +479,7 @@ class PlatformAuthorizationLease:
             return False
         return self.not_before <= now_iso <= self.expires_at
 
+
 # --------------------------------------------------------------------------- #
 # Adapter protocol + registry + local implementation
 # --------------------------------------------------------------------------- #
@@ -496,6 +510,7 @@ class PlatformAdapter(Protocol):
 
     def classify_failure(self, error: BaseException) -> str: ...
 
+
 class PlatformAdapterRegistry:
     '''Owns adapter lookup and duplicate registration checks.'''
 
@@ -520,6 +535,7 @@ class PlatformAdapterRegistry:
 
     def all(self) -> list[PlatformAdapter]:
         return list(self._adapters.values())
+
 
 class LocalShadowPlatformAdapter:
     '''The only registered adapter in W2-1. Platform-neutral, local, shadow-only.'''
@@ -692,6 +708,7 @@ class LocalShadowPlatformAdapter:
             ):
                 return FAILURE_TERMINAL
         return FAILURE_TERMINAL
+
 
 def build_default_registry() -> PlatformAdapterRegistry:
     registry = PlatformAdapterRegistry()

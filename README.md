@@ -162,7 +162,7 @@ Python 运行时、CLI、本地 API、配置与验证工具。
 - **任务图与 DAG**（`dag.py` / `governed_dag.py` / `task_graph.py`）：依赖、并发、checkpoint、resume、retry、补偿与明确终态。
 - **小说生产管线**（`novel_mvp.py` / `novel_operations.py` / `novel_studio.py`）：规划、知识上下文、生成、内审、不合格草稿阻断、五章滚动缓冲、provenance、生产批次、重启恢复与 owner 控制。
 - **自审与验收**（`acceptance.py` / `external_evaluations.py`）：质量门与失败草稿阻断。
-- **restart-safe 状态脊柱**（`state_spine.py` / `storage.py` / `company_events.py`）：事件、快照、制品与归档五类事实存储。
+- **restart-safe 状态脊柱**（`state_spine.py` / `storage.py` / `company_events.py`）：运行事件（EventStore）、当前状态（Snapshot / State DB）、稳定决策经验（Canonical Memory）、生产制品（Artifact Store）与原始对话证据（Archive）五类事实存储。
 - **知识适配器接口**（`novel_knowledge.py`）：公开安全的版本化知识注入契约。
 - **确定性默认拒绝导出与失败即止验证**（`export_public_alpha.py` / `validate_public_alpha.py` / `validate_docs.py`）。
 - **原生 clean-room 验收**（`run_clean_room.ps1`）：模型无关、效应无关的本地快速开始。
@@ -337,7 +337,7 @@ and export validation):
 - **Task graphs and DAG** (`dag.py` / `governed_dag.py` / `task_graph.py`): dependencies, concurrency, checkpoint, resume, retry, compensation, and explicit terminal states.
 - **Novel production pipeline** (`novel_mvp.py` / `novel_operations.py` / `novel_studio.py`): planning, knowledge context, generation, internal review, failed-draft blocking, a five-chapter rolling buffer, provenance, production batches, restart recovery, and owner controls.
 - **Self-review and acceptance** (`acceptance.py` / `external_evaluations.py`): quality gates and failed-draft blocking.
-- **Restart-safe state spine** (`state_spine.py` / `storage.py` / `company_events.py`): five fact stores — events, snapshots, artifacts, archive, and canonical memory.
+- **Restart-safe state spine** (`state_spine.py` / `storage.py` / `company_events.py`): five fact stores — run events (EventStore), current state (Snapshot / State DB), stable decision experience (Canonical Memory), production artifacts (Artifact Store), and raw conversation evidence (Archive). Canonical Memory is the stable decision-experience layer / read-only retrieval boundary, not a writable store owned by the state spine.
 - **Knowledge adapter interface** (`novel_knowledge.py`): a public-safe, versioned knowledge-injection contract.
 - **Deterministic default-deny export and fail-closed validation** (`export_public_alpha.py` / `validate_public_alpha.py` / `validate_docs.py`).
 - **Native clean-room acceptance** (`run_clean_room.ps1`): model-free, effect-free local quickstart.

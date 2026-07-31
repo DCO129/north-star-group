@@ -1,6 +1,6 @@
 # Roadmap & Governance / 路线图与治理
 
-[中文](#中文-3) | [English](#english-3)
+[中文](#中文--chinese) | [English](#english)
 
 本文件是前瞻、非约束性的公开治理说明。所有者（零号）应在任何决策生效前予以批准。北极星集团
 已作为公开 Alpha 发布（Apache-2.0）。

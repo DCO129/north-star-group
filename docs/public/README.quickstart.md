@@ -1,6 +1,6 @@
 # North-Star-Group — v0.1-Alpha Public Quickstart / 公开快速开始
 
-[中文](#中文-4) | [English](#english-4)
+[中文](#中文--chinese) | [English](#english)
 
 本包是北极星集团的**公开 Alpha**（Apache-2.0，已发布）。以下快速开始使用确定性的本地执行器，
 **无真实模型调用、无外部效应**。

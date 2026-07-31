@@ -1,6 +1,6 @@
 # Architecture (Public Overview) / 架构（公开概览）
 
-[中文](#中文-2) | [English](#english-2)
+[中文](#中文--chinese) | [English](#english)
 
 本文描述北极星集团运行时的**公开安全面**，刻意省略私有运营拓扑、凭据与内部服务地址。
 

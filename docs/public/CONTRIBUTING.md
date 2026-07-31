@@ -1,6 +1,6 @@
 # Contributing (pointer) / 贡献指南（指针）
 
-[中文](#中文-6) | [English](#english-6)
+[中文](#中文--chinese) | [English](#english)
 
 权威贡献指南是仓库根目录的 [CONTRIBUTING.md](../../CONTRIBUTING.md)。本 `docs/public/`
 副本仅作短指针；所有规则、开发流程与 Pull Request 要求都在根文件中。

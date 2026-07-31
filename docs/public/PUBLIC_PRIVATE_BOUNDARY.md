@@ -1,6 +1,6 @@
 # Public / Private Boundary / 公开与私有边界
 
-[中文](#中文-5) | [English](#english-5)
+[中文](#中文--chinese) | [English](#english)
 
 本包采用**默认拒绝**导出模型：除非显式在白名单上，否则**没有任何内容**是公开的。边界由代码
 （`export_public_alpha.py` + `validate_public_alpha.py`）强制，并在
@@ -43,12 +43,36 @@ explicitly on the allow-list. The boundary is enforced by code
 
 ### 允许清单（显式公开）/ Allow-list (explicitly public)
 
-- `src/private_ai_company/**/*.py`
-- `requirements-*.txt`
-- `README.md`, `architecture/**`, `examples/**`
-- `scripts/export_public_alpha.py`, `scripts/validate_public_alpha.py`
-- `config/public-export-policy.json`
-- `docs/public/**`
+以下清单与 `config/public-export-policy.json` 的 `allow.files` **逐项一致**，由机器 gate 校验（missing/extra = 0/0）。不要手动扩宽、缩窄或用不等价概括替代。
+
+```
+src/private_ai_company/**/*.py
+pyproject.toml
+requirements-api.txt
+requirements-novel.txt
+requirements-research.txt
+README.md
+bootstrap.ps1
+examples/quickstart-group/**/*
+architecture/**/*
+scripts/export_public_alpha.py
+scripts/validate_public_alpha.py
+scripts/validate_docs.py
+scripts/run_clean_room.ps1
+scripts/verify_g1_5_publication_candidate.py
+tests/smoke_public_alpha.py
+tests/test_public_alpha_ci_contract.py
+tests/test_g1_5_publication_candidate.py
+config/public-export-policy.json
+LICENSE
+CONTRIBUTING.md
+SECURITY.md
+CODE_OF_CONDUCT.md
+ROADMAP.md
+CHANGELOG.md
+.github/**/*
+docs/public/**/*
+```
 
 ### 拒绝规则（永不公开）/ Deny rules (never public)
 
@@ -105,12 +129,38 @@ No suggestion is made that private data will be open-sourced in the future.
 
 ### Allow-list (explicitly public)
 
-- `src/private_ai_company/**/*.py`
-- `requirements-*.txt`
-- `README.md`, `architecture/**`, `examples/**`
-- `scripts/export_public_alpha.py`, `scripts/validate_public_alpha.py`
-- `config/public-export-policy.json`
-- `docs/public/**`
+The list below is kept **line-for-line consistent** with `allow.files` in
+`config/public-export-policy.json`, enforced by a machine gate (missing/extra =
+0/0). Do not widen, narrow, or replace it with a non-equivalent summary.
+
+```
+src/private_ai_company/**/*.py
+pyproject.toml
+requirements-api.txt
+requirements-novel.txt
+requirements-research.txt
+README.md
+bootstrap.ps1
+examples/quickstart-group/**/*
+architecture/**/*
+scripts/export_public_alpha.py
+scripts/validate_public_alpha.py
+scripts/validate_docs.py
+scripts/run_clean_room.ps1
+scripts/verify_g1_5_publication_candidate.py
+tests/smoke_public_alpha.py
+tests/test_public_alpha_ci_contract.py
+tests/test_g1_5_publication_candidate.py
+config/public-export-policy.json
+LICENSE
+CONTRIBUTING.md
+SECURITY.md
+CODE_OF_CONDUCT.md
+ROADMAP.md
+CHANGELOG.md
+.github/**/*
+docs/public/**/*
+```
 
 ### Deny rules (never public)
 

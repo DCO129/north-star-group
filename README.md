@@ -148,7 +148,7 @@ Python 运行时、CLI、本地 API、配置与验证工具。
 > **我们知道自己要去哪里，但不假装自己已经知道最好的路。**
 > **We know where we want to go, but we do not pretend that we already know the best path.**
 
-我们的语气既不自我贬低，也不写成"请社区免费替我们收拾代码"。社区参与应被描述为**尊重、协作、独立审查与共同学习**。
+我们不会把社区当作免费外包，也不会把维护责任转嫁给贡献者。我们希望通过尊重、协作、独立审查与共同学习改进项目。
 
 ### 6. 当前已实现能力
 
@@ -191,7 +191,7 @@ Python 运行时、CLI、本地 API、配置与验证工具。
 6. 让**工具、文件、网络与权限行为**保持透明。
 7. 验证架构能否**从小说子公司推广到更多组织与业务**。
 
-明确写入：一份清晰的缺陷报告、反例、架构异议或安全问题，**本身就是有效贡献**。社区贡献者**不是无偿外包人员**；维护者仍负责审查、整合、反馈与署名。
+一份清晰的缺陷报告、反例、架构异议或安全问题，**本身就是有效贡献**。社区贡献者**不是无偿外包人员**；维护者仍负责审查、整合、反馈与署名。
 
 ### 9. 希望社区在哪些方面帮助
 
@@ -218,7 +218,7 @@ Python 运行时、CLI、本地 API、配置与验证工具。
 
 完整路线图见 [ROADMAP.md](ROADMAP.md)。要点：
 
-- **Phase 1–4 已完成**：组织运行时基础、持久状态与知识连续性、小说子公司闭环、可复现公开 Alpha（含默认拒绝导出、隐私扫描、确定性 manifests、clean-room、CLI/API、Apache-2.0 与 GitHub 治理面）。
+- **Phase 1（Completed Alpha）、Phase 2（First vertical validated）、Phase 3（Novel Alpha closure completed）、Phase 4（Completed）**：分别对应组织运行时基础、持久状态与知识连续性、小说子公司闭环、可复现公开 Alpha（含默认拒绝导出、隐私扫描、确定性 manifests、clean-room、CLI/API、Apache-2.0 与 GitHub 治理面）。四个阶段状态含义不同，不笼统宣称"1–4 全部完成"。
 - **Phase 5 进行中**：双语文档、诚实限制说明、公开路线图、清除发布前陈旧文本、Ponytail 安全精简、外部审查、跨平台验证、contributor onboarding。
 - **Phase 6 规划中**：通用部门合同、更多部门类型、公开知识 connector、更多 provider、更完善的控制中心/UI、部门间协作、更长周期任务、社区部门包与 skill 包。
 
@@ -320,9 +320,9 @@ We try to describe this project honestly:
 
 > **We know where we want to go, but we do not pretend that we already know the best path.**
 
-Our tone is neither self-deprecating nor "please clean up our code for free". Community
-participation should be described as **respectful, collaborative, independent review, and
-mutual learning**.
+We do not treat the community as unpaid outsourcing or shift maintainer responsibility onto
+contributors. We want to improve the project through respectful collaboration, independent
+review, and mutual learning.
 
 ### 6. Currently implemented capabilities
 
@@ -366,10 +366,9 @@ and export validation):
 6. Keep **tools, files, network, and permission behavior** transparent.
 7. Validate whether the architecture can **generalize from the novel subsidiary to more organizations and businesses**.
 
-Stated clearly: a clear defect report, counterexample, architecture objection, or security
-issue **is itself a valid contribution**. Community contributors are **not unpaid
-outsourcers**; maintainers remain responsible for review, integration, feedback, and
-attribution.
+A clear defect report, counterexample, architecture objection, or security issue **is itself
+a valid contribution**. Community contributors are **not unpaid outsourcers**; maintainers
+remain responsible for review, integration, feedback, and attribution.
 
 ### 9. How the community can help
 
@@ -396,10 +395,12 @@ attribution.
 
 The full roadmap is in [ROADMAP.md](ROADMAP.md). Highlights:
 
-- **Phases 1–4 are done**: organizational runtime foundations, durable state and knowledge
-  continuity, the novel-subsidiary closure, and a reproducible public Alpha (default-deny
-  export, privacy scan, deterministic manifests, clean-room, CLI/API, Apache-2.0, and the
-  GitHub governance surface).
+- **Phase 1 (Completed Alpha), Phase 2 (First vertical validated), Phase 3 (Novel Alpha
+  closure completed), and Phase 4 (Completed)**: respectively organizational runtime
+  foundations, durable state and knowledge continuity, the novel-subsidiary closure, and a
+  reproducible public Alpha (default-deny export, privacy scan, deterministic manifests,
+  clean-room, CLI/API, Apache-2.0, and the GitHub governance surface). Their status meanings
+  differ; we do not collapse them into a single "all done" claim.
 - **Phase 5 is current**: bilingual docs, honest-limitations notes, the public roadmap,
   removal of pre-publication stale text, Ponytail safe reduction, external review,
   cross-platform verification, and contributor onboarding.

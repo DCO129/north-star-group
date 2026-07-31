@@ -1,6 +1,6 @@
 # Contributing / 贡献指南
 
-[中文](#中文-1) | [English](#english-1)
+[中文](#中文--chinese) | [English](#english)
 
 本仓库是北极星集团的公开早期 Alpha（Apache-2.0，已发布）。以下规则是中英双语的权威贡献指南。
 
@@ -28,11 +28,15 @@ published). The rules below are the authoritative, bilingual contribution guide.
 - 绝对个人路径或机器路径（不可避免时用 `<PROJECT_ROOT>` 占位）。
 - 生成的私有证据、暂存回执或机器特定日志。
 
-### 开发流程
+### 开发流程（公开协作）
 
-1. 在私有源仓库上做修改。
-2. 任何新文件必须先进入导出白名单（`config/public-export-policy.json`）才能进入公开导出。
-3. 本地运行轻量、可移植的验证：
+外部贡献者请按真实公开流程操作——你无需、也不应接触私有 canonical 源：
+
+1. fork 或 clone 本公开仓库（`DCO129/north-star-group`）。
+2. 从最新的 `main` 分支新建一个特性分支。
+3. 只提交公开安全的改动（详见上方"公开 / 私有边界"）。
+4. 若新增任何导出文件，同步更新 `config/public-export-policy.json` 的导出白名单。
+5. 本地运行轻量、可移植的验证：
    ```bash
    python scripts/export_public_alpha.py --source-root . --staging-root ./_staging
    python scripts/validate_public_alpha.py --staging-root ./_staging
@@ -40,7 +44,8 @@ published). The rules below are the authoritative, bilingual contribution guide.
    python tests/smoke_public_alpha.py
    python tests/test_public_alpha_ci_contract.py
    ```
-4. 失败即止验证器必须报告 `PUBLIC_ALPHA_VALIDATE_OK` 且全 `ZERO_*` 为零；smoke 与 CI-contract 测试必须通过。
+6. 提交 Pull Request，并披露：范围、测试、公开/私有边界影响，以及任何外部效应或模型调用。
+   失败即止验证器必须报告 `PUBLIC_ALPHA_VALIDATE_OK` 且全 `ZERO_*` 为零；smoke 与 CI-contract 测试必须通过。
 
 ### Pull Request 要求
 
@@ -84,12 +89,17 @@ Submit only public-safe code and documentation. Do **not** submit:
 - Absolute personal or machine filesystem paths (use `<PROJECT_ROOT>` if a placeholder is unavoidable).
 - Generated private evidence, staging receipts, or machine-specific logs.
 
-### Development flow
+### Development flow (public collaboration)
 
-1. Make changes against the private source repository.
-2. Every new file must be on the export allow-list
-   (`config/public-export-policy.json`) before it can appear in a public export.
-3. Run the lightweight, portable validation locally:
+External contributors follow the real public flow — you do not need, and should
+not, touch the private canonical source:
+
+1. Fork or clone this public repository (`DCO129/north-star-group`).
+2. Create a feature branch from the latest `main`.
+3. Submit only public-safe changes (see "Public / private boundary" above).
+4. If you add any exported file, update the export allow-list in
+   `config/public-export-policy.json` at the same time.
+5. Run the lightweight, portable validation locally:
    ```bash
    python scripts/export_public_alpha.py --source-root . --staging-root ./_staging
    python scripts/validate_public_alpha.py --staging-root ./_staging
@@ -97,8 +107,10 @@ Submit only public-safe code and documentation. Do **not** submit:
    python tests/smoke_public_alpha.py
    python tests/test_public_alpha_ci_contract.py
    ```
-4. The fail-closed validator must report `PUBLIC_ALPHA_VALIDATE_OK` with zero
-   `ZERO_*` hits, and the smoke/CI-contract tests must pass.
+6. Open a pull request and disclose: scope, tests, public/private-boundary impact,
+   and any external effects or model calls. The fail-closed validator must report
+   `PUBLIC_ALPHA_VALIDATE_OK` with zero `ZERO_*` hits, and the smoke/CI-contract
+   tests must pass.
 
 ### Pull-request requirements
 

@@ -42,9 +42,9 @@
       "sha256": "cc0b2917155e74fe087a26c6a0eb2e946b5d92241375dc720fce65bcee8579d6"
     },
     {
-      "length": 5998,
+      "length": 6807,
       "rel_path": "CONTRIBUTING.md",
-      "sha256": "6ffb852b71cbf6e75a6d6b4c97e8a7320147b53ca28f96e2af56fec54ce7083d"
+      "sha256": "189086dfd92147ab78255427a3a397843c3ec99e3be1f417b79753f2cdbea27e"
     },
     {
       "length": 11364,
@@ -52,9 +52,9 @@
       "sha256": "d34ff3ac18fb886b224d9afabd9b5ce1fe38e6cc000a4477bae47c76da848dd8"
     },
     {
-      "length": 25513,
+      "length": 25903,
       "rel_path": "README.md",
-      "sha256": "6850f5dc88ce9c17bf4c844d20ce4360756f9a8ee0dadac18846aff60e82f2c9"
+      "sha256": "c600a3ca8438b5e6a627545389fa6c0fb2e64dd8a7ae02b24925ed9a3ad93eb6"
     },
     {
       "length": 6369,
@@ -87,14 +87,14 @@
       "sha256": "43677aac39b20e6e6285570a4bb02b5843262ebaad31abae37b83680263fe594"
     },
     {
-      "length": 6388,
+      "length": 6393,
       "rel_path": "docs/public/ARCHITECTURE.md",
-      "sha256": "d685f89fde1ad429cabfe435352c921967ee3cfa6309630a768efac8e5b661f8"
+      "sha256": "743f0ecbe4ff7f33d42af8b30cb80f4cc0af393d833f0b57784fab4fc7589b4d"
     },
     {
-      "length": 1243,
+      "length": 1248,
       "rel_path": "docs/public/CONTRIBUTING.md",
-      "sha256": "8f61fdd3bc9e787d82f0361911cac33da5f02f399128c8efa50397a9763bfa28"
+      "sha256": "8dea60494a15b35f7bd5be9f7cd64d1758b569cc91147659c8b09a17aea41adc"
     },
     {
       "length": 1239,
@@ -102,19 +102,19 @@
       "sha256": "778bf3a7e0661437305836be2da284d6088da5441f2a530e69e04304d09ba918"
     },
     {
-      "length": 6016,
+      "length": 7195,
       "rel_path": "docs/public/PUBLIC_PRIVATE_BOUNDARY.md",
-      "sha256": "b31be666510b2b161a9bd2f0931d72305dc35ceca23b28fb30666bb7981521a8"
+      "sha256": "ffde47a0040a8acf783b66f2c349dc53cec7424ccd2c05dbfcd0aeb2302808ff"
     },
     {
-      "length": 6164,
+      "length": 6169,
       "rel_path": "docs/public/README.quickstart.md",
-      "sha256": "3ba80fac662b93770656f256089f13ad52b2e8633ee4f94e64faca7b14d0b55f"
+      "sha256": "4e85d95710e63278b8909c9224a1bc36757d06ac26508156ce4d3e4b1464ccc1"
     },
     {
-      "length": 3663,
+      "length": 3668,
       "rel_path": "docs/public/ROADMAP_GOVERNANCE.md",
-      "sha256": "943e2ff74f5ca64620d0a708b389a7bad0f8c7b964cf32a55bad1ff6c20870d5"
+      "sha256": "5d3aa9b064813479f60879f1041b28834062a3b32b49bb90ac2d20b49ce87fd0"
     },
     {
       "length": 542,

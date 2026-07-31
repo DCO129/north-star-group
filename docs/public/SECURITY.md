@@ -1,9 +1,1 @@
-# Security (pointer)
-
-The authoritative security policy is the repository-root
-[SECURITY.md](../../SECURITY.md). This `docs/public/` copy is a short pointer only.
-In short: the package is produced by a deterministic, default-deny exporter and
-a fail-closed validator; it contains no secret material, private data, or machine
-paths. Report vulnerabilities **privately** per the root policy — do not open
-public issues for them. The generated receipts (`EXPORT_MANIFEST.json`,
-`SCAN_RECEIPT.json`, etc.) are evidence, not hand-edited source.
+IyBTZWN1cml0eSAocG9pbnRlcikKClRoZSBhdXRob3JpdGF0aXZlIHNlY3VyaXR5IHBvbGljeSBpcyB0aGUgcmVwb3NpdG9yeS1yb290CltTRUNVUklUWS5tZF0oLi4vLi4vU0VDVVJJVFkubWQpLiBUaGlzIGBkb2NzL3B1YmxpYy9gIGNvcHkgaXMgYSBzaG9ydCBwb2ludGVyIG9ubHkuCkluIHNob3J0OiB0aGUgcGFja2FnZSBpcyBwcm9kdWNlZCBieSBhIGRldGVybWluaXN0aWMsIGRlZmF1bHQtZGVueSBleHBvcnRlciBhbmQKYSBmYWlsLWNsb3NlZCB2YWxpZGF0b3I7IGl0IGNvbnRhaW5zIG5vIHNlY3JldCBtYXRlcmlhbCwgcHJpdmF0ZSBkYXRhLCBvciBtYWNoaW5lCnBhdGhzLiBSZXBvcnQgdnVsbmVyYWJpbGl0aWVzICoqcHJpdmF0ZWx5KiogcGVyIHRoZSByb290IHBvbGljeSDigJQgZG8gbm90IG9wZW4KcHVibGljIGlzc3VlcyBmb3IgdGhlbS4gVGhlIGdlbmVyYXRlZCByZWNlaXB0cyAoYEVYUE9SVF9NQU5JRkVTVC5qc29uYCwKYFNDQU5fUkVDRUlQVC5qc29uYCwgZXRjLikgYXJlIGV2aWRlbmNlLCBub3QgaGFuZC1lZGl0ZWQgc291cmNlLgo=

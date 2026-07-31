@@ -1,10 +1,1 @@
-{
-  "schema_version": "department-workflow/v0",
-  "capability_actions": {
-    "audit": {
-      "outcome_code": "audit-report-prepared",
-      "sections": ["source-integrity", "plan-completeness", "budget-boundary", "verdict"],
-      "quality_checks": ["evidence-present", "hash-present", "owners-present", "gates-present"]
-    }
-  }
-}
+ewogICJzY2hlbWFfdmVyc2lvbiI6ICJkZXBhcnRtZW50LXdvcmtmbG93L3YwIiwKICAiY2FwYWJpbGl0eV9hY3Rpb25zIjogewogICAgImF1ZGl0IjogewogICAgICAib3V0Y29tZV9jb2RlIjogImF1ZGl0LXJlcG9ydC1wcmVwYXJlZCIsCiAgICAgICJzZWN0aW9ucyI6IFsic291cmNlLWludGVncml0eSIsICJwbGFuLWNvbXBsZXRlbmVzcyIsICJidWRnZXQtYm91bmRhcnkiLCAidmVyZGljdCJdLAogICAgICAicXVhbGl0eV9jaGVja3MiOiBbImV2aWRlbmNlLXByZXNlbnQiLCAiaGFzaC1wcmVzZW50IiwgIm93bmVycy1wcmVzZW50IiwgImdhdGVzLXByZXNlbnQiXQogICAgfQogIH0KfQo=

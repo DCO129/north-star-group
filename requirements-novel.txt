@@ -1,2 +1,1 @@
--r requirements-api.txt
-agent-framework-core==1.12.0
+LXIgcmVxdWlyZW1lbnRzLWFwaS50eHQKYWdlbnQtZnJhbWV3b3JrLWNvcmU9PTEuMTIuMA==

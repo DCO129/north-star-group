@@ -1,11 +1,1 @@
-# Audit Skill
-
-Inputs: Research evidence, Operations plan, cost records, and acceptance criteria.
-
-Output: an independent pass or blocked verdict with exact checks, risks, and the next permitted action.
-
-Rules:
-
-- Never accept a completion claim without source evidence and a content hash.
-- Every action item must have an owner and a completion gate.
-- Report missing evidence as a blocker, not as a successful result.
+IyBBdWRpdCBTa2lsbAoKSW5wdXRzOiBSZXNlYXJjaCBldmlkZW5jZSwgT3BlcmF0aW9ucyBwbGFuLCBjb3N0IHJlY29yZHMsIGFuZCBhY2NlcHRhbmNlIGNyaXRlcmlhLgoKT3V0cHV0OiBhbiBpbmRlcGVuZGVudCBwYXNzIG9yIGJsb2NrZWQgdmVyZGljdCB3aXRoIGV4YWN0IGNoZWNrcywgcmlza3MsIGFuZCB0aGUgbmV4dCBwZXJtaXR0ZWQgYWN0aW9uLgoKUnVsZXM6CgotIE5ldmVyIGFjY2VwdCBhIGNvbXBsZXRpb24gY2xhaW0gd2l0aG91dCBzb3VyY2UgZXZpZGVuY2UgYW5kIGEgY29udGVudCBoYXNoLgotIEV2ZXJ5IGFjdGlvbiBpdGVtIG11c3QgaGF2ZSBhbiBvd25lciBhbmQgYSBjb21wbGV0aW9uIGdhdGUuCi0gUmVwb3J0IG1pc3NpbmcgZXZpZGVuY2UgYXMgYSBibG9ja2VyLCBub3QgYXMgYSBzdWNjZXNzZnVsIHJlc3VsdC4K

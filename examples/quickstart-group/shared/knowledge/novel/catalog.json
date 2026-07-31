@@ -1,17 +1,1 @@
-{
-  "schema_version": "novel-knowledge-catalog/v1",
-  "assets": [
-    {
-      "asset_id": "scene-pacing-v1",
-      "asset_path": "shared/knowledge/novel/scene-pacing-v1.json",
-      "version": "v1",
-      "rights_status": "owned"
-    },
-    {
-      "asset_id": "chapter-hook-v1",
-      "asset_path": "shared/knowledge/novel/chapter-hook-v1.json",
-      "version": "v1",
-      "rights_status": "owned"
-    }
-  ]
-}
+ew0KICAic2NoZW1hX3ZlcnNpb24iOiAibm92ZWwta25vd2xlZGdlLWNhdGFsb2cvdjEiLA0KICAiYXNzZXRzIjogWw0KICAgIHsNCiAgICAgICJhc3NldF9pZCI6ICJzY2VuZS1wYWNpbmctdjEiLA0KICAgICAgImFzc2V0X3BhdGgiOiAic2hhcmVkL2tub3dsZWRnZS9ub3ZlbC9zY2VuZS1wYWNpbmctdjEuanNvbiIsDQogICAgICAidmVyc2lvbiI6ICJ2MSIsDQogICAgICAicmlnaHRzX3N0YXR1cyI6ICJvd25lZCINCiAgICB9LA0KICAgIHsNCiAgICAgICJhc3NldF9pZCI6ICJjaGFwdGVyLWhvb2stdjEiLA0KICAgICAgImFzc2V0X3BhdGgiOiAic2hhcmVkL2tub3dsZWRnZS9ub3ZlbC9jaGFwdGVyLWhvb2stdjEuanNvbiIsDQogICAgICAidmVyc2lvbiI6ICJ2MSIsDQogICAgICAicmlnaHRzX3N0YXR1cyI6ICJvd25lZCINCiAgICB9DQogIF0NCn0NCg==

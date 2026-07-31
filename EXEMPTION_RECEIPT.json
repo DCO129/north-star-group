@@ -1,18 +1,1 @@
-{
-  "safe_exemption_count": 2,
-  "schema_version": "public-exemption-receipt/v1",
-  "verified_exemptions": [
-    {
-      "expected_value": "platform-raw-secret",
-      "path": "src/private_ai_company/platform_adapter.py",
-      "status": "verified_safe",
-      "symbol": "PLATFORM_RAW_SECRET"
-    },
-    {
-      "expected_value": "novel-production-raw-secret",
-      "path": "src/private_ai_company/production_batch.py",
-      "status": "verified_safe",
-      "symbol": "PROD_RAW_SECRET"
-    }
-  ]
-}
+ewogICJzYWZlX2V4ZW1wdGlvbl9jb3VudCI6IDIsCiAgInNjaGVtYV92ZXJzaW9uIjogInB1YmxpYy1leGVtcHRpb24tcmVjZWlwdC92MSIsCiAgInZlcmlmaWVkX2V4ZW1wdGlvbnMiOiBbCiAgICB7CiAgICAgICJleHBlY3RlZF92YWx1ZSI6ICJwbGF0Zm9ybS1yYXctc2VjcmV0IiwKICAgICAgInBhdGgiOiAic3JjL3ByaXZhdGVfYWlfY29tcGFueS9wbGF0Zm9ybV9hZGFwdGVyLnB5IiwKICAgICAgInN0YXR1cyI6ICJ2ZXJpZmllZF9zYWZlIiwKICAgICAgInN5bWJvbCI6ICJQTEFURk9STV9SQVdfU0VDUkVUIgogICAgfSwKICAgIHsKICAgICAgImV4cGVjdGVkX3ZhbHVlIjogIm5vdmVsLXByb2R1Y3Rpb24tcmF3LXNlY3JldCIsCiAgICAgICJwYXRoIjogInNyYy9wcml2YXRlX2FpX2NvbXBhbnkvcHJvZHVjdGlvbl9iYXRjaC5weSIsCiAgICAgICJzdGF0dXMiOiAidmVyaWZpZWRfc2FmZSIsCiAgICAgICJzeW1ib2wiOiAiUFJPRF9SQVdfU0VDUkVUIgogICAgfQogIF0KfQ==

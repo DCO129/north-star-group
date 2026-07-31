@@ -1,17 +1,1 @@
-{
-  "asset_id": "chapter-hook-v1",
-  "asset_path": "shared/knowledge/novel/chapter-hook-v1.json",
-  "content_sha256": "acabcc2b579008c404745a8391624951fc834cbcbb83096f5bd13d41b359aa30",
-  "rights_status": "owned",
-  "schema_version": "novel-knowledge-asset/v1",
-  "source_ref": "group://shared/knowledge/novel/chapter-hook-v1.json",
-  "tags": [
-    "hook",
-    "opening",
-    "craft",
-    "engagement"
-  ],
-  "text": "Distilled chapter-hook guidance (original, not sourced from any book):\n- Start in the middle of action or a small mystery, not with exposition.\n- Plant one unanswered question in the first 100 words to pull the reader forward.\n- Reveal character through a choice in the hook, not through static description.\n- Tie the hook to the chapter's core promise so the payoff lands before the chapter ends.\n- Avoid prologues and weather opens unless they carry immediate stakes.",
-  "title": "Chapter hook craft techniques",
-  "version": "v1"
-}
+ew0KICAiYXNzZXRfaWQiOiAiY2hhcHRlci1ob29rLXYxIiwNCiAgImFzc2V0X3BhdGgiOiAic2hhcmVkL2tub3dsZWRnZS9ub3ZlbC9jaGFwdGVyLWhvb2stdjEuanNvbiIsDQogICJjb250ZW50X3NoYTI1NiI6ICJhY2FiY2MyYjU3OTAwOGM0MDQ3NDVhODM5MTYyNDk1MWZjODM0Y2JjYmI4MzA5NmY1YmQxM2Q0MWIzNTlhYTMwIiwNCiAgInJpZ2h0c19zdGF0dXMiOiAib3duZWQiLA0KICAic2NoZW1hX3ZlcnNpb24iOiAibm92ZWwta25vd2xlZGdlLWFzc2V0L3YxIiwNCiAgInNvdXJjZV9yZWYiOiAiZ3JvdXA6Ly9zaGFyZWQva25vd2xlZGdlL25vdmVsL2NoYXB0ZXItaG9vay12MS5qc29uIiwNCiAgInRhZ3MiOiBbDQogICAgImhvb2siLA0KICAgICJvcGVuaW5nIiwNCiAgICAiY3JhZnQiLA0KICAgICJlbmdhZ2VtZW50Ig0KICBdLA0KICAidGV4dCI6ICJEaXN0aWxsZWQgY2hhcHRlci1ob29rIGd1aWRhbmNlIChvcmlnaW5hbCwgbm90IHNvdXJjZWQgZnJvbSBhbnkgYm9vayk6XG4tIFN0YXJ0IGluIHRoZSBtaWRkbGUgb2YgYWN0aW9uIG9yIGEgc21hbGwgbXlzdGVyeSwgbm90IHdpdGggZXhwb3NpdGlvbi5cbi0gUGxhbnQgb25lIHVuYW5zd2VyZWQgcXVlc3Rpb24gaW4gdGhlIGZpcnN0IDEwMCB3b3JkcyB0byBwdWxsIHRoZSByZWFkZXIgZm9yd2FyZC5cbi0gUmV2ZWFsIGNoYXJhY3RlciB0aHJvdWdoIGEgY2hvaWNlIGluIHRoZSBob29rLCBub3QgdGhyb3VnaCBzdGF0aWMgZGVzY3JpcHRpb24uXG4tIFRpZSB0aGUgaG9vayB0byB0aGUgY2hhcHRlcidzIGNvcmUgcHJvbWlzZSBzbyB0aGUgcGF5b2ZmIGxhbmRzIGJlZm9yZSB0aGUgY2hhcHRlciBlbmRzLlxuLSBBdm9pZCBwcm9sb2d1ZXMgYW5kIHdlYXRoZXIgb3BlbnMgdW5sZXNzIHRoZXkgY2FycnkgaW1tZWRpYXRlIHN0YWtlcy4iLA0KICAidGl0bGUiOiAiQ2hhcHRlciBob29rIGNyYWZ0IHRlY2huaXF1ZXMiLA0KICAidmVyc2lvbiI6ICJ2MSINCn0NCg==

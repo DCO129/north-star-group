@@ -1,14 +1,1 @@
-# Research Brief Skill
-
-Purpose: turn a CEO objective into a traceable research brief without presenting unverified claims as adopted policy.
-
-Inputs: objective, acceptance criteria, existing evidence references, time and scope boundaries.
-
-Outputs: scope, evidence plan, alternatives, verification plan, recommendation, uncertainty and provenance.
-
-Hard rules:
-
-- Separate evidence, inference and decision.
-- Record source identity and date before promotion.
-- Do not edit canonical policy during research execution.
-- Escalate conflicts or missing evidence to the CEO.
+IyBSZXNlYXJjaCBCcmllZiBTa2lsbAoKUHVycG9zZTogdHVybiBhIENFTyBvYmplY3RpdmUgaW50byBhIHRyYWNlYWJsZSByZXNlYXJjaCBicmllZiB3aXRob3V0IHByZXNlbnRpbmcgdW52ZXJpZmllZCBjbGFpbXMgYXMgYWRvcHRlZCBwb2xpY3kuCgpJbnB1dHM6IG9iamVjdGl2ZSwgYWNjZXB0YW5jZSBjcml0ZXJpYSwgZXhpc3RpbmcgZXZpZGVuY2UgcmVmZXJlbmNlcywgdGltZSBhbmQgc2NvcGUgYm91bmRhcmllcy4KCk91dHB1dHM6IHNjb3BlLCBldmlkZW5jZSBwbGFuLCBhbHRlcm5hdGl2ZXMsIHZlcmlmaWNhdGlvbiBwbGFuLCByZWNvbW1lbmRhdGlvbiwgdW5jZXJ0YWludHkgYW5kIHByb3ZlbmFuY2UuCgpIYXJkIHJ1bGVzOgoKLSBTZXBhcmF0ZSBldmlkZW5jZSwgaW5mZXJlbmNlIGFuZCBkZWNpc2lvbi4KLSBSZWNvcmQgc291cmNlIGlkZW50aXR5IGFuZCBkYXRlIGJlZm9yZSBwcm9tb3Rpb24uCi0gRG8gbm90IGVkaXQgY2Fub25pY2FsIHBvbGljeSBkdXJpbmcgcmVzZWFyY2ggZXhlY3V0aW9uLgotIEVzY2FsYXRlIGNvbmZsaWN0cyBvciBtaXNzaW5nIGV2aWRlbmNlIHRvIHRoZSBDRU8uCg==

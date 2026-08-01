@@ -19,7 +19,6 @@ Design invariants (contract W1-1 §2, §5, §6):
 
 from __future__ import annotations
 
-import hashlib
 import json
 import os
 import re
@@ -29,6 +28,7 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence
 
 from .timebase import authoritative_timestamp
+from ._hashing import sha256_text
 
 
 # --------------------------------------------------------------------------- #
@@ -97,10 +97,6 @@ class EconomicLedgerError(Exception):
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
-def sha256_text(text: str) -> str:
-    return hashlib.sha256(text.encode('utf-8')).hexdigest()
-
-
 def canonical_json(value: Any) -> str:
     return json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(',', ':'))
 

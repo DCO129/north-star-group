@@ -33,7 +33,6 @@ Frozen schemas (contract §4 / execution order §3):
 
 from __future__ import annotations
 
-import hashlib
 import json
 import os
 import re
@@ -62,6 +61,7 @@ from .providers import ModelMessage, ModelProvider, ModelRequest
 from .publication import PublicationService
 from decimal import Decimal
 from .budget import ModelRate
+from ._hashing import sha256_text
 
 
 # --------------------------------------------------------------------------- #
@@ -126,10 +126,6 @@ class NovelOperationsError(Exception):
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
-def sha256_text(text: str) -> str:
-    return hashlib.sha256(text.encode('utf-8')).hexdigest()
-
-
 def canonical_json(value: Any) -> str:
     return json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(',', ':'))
 

@@ -21,7 +21,6 @@ DAG nodes are never executed twice after object destruction and resume.
 
 from __future__ import annotations
 
-import hashlib
 import json
 import re
 from dataclasses import dataclass
@@ -35,6 +34,7 @@ from .dag import DagNodeSpec, DepartmentDagExecutor, DurableDagRunner
 from .executors import DepartmentExecutor, DepartmentResult, ExecutionRequest
 from .state_spine import RestartSafeStateSpine, StateSpineError
 from .timebase import authoritative_timestamp
+from ._hashing import sha256_text
 
 
 # --------------------------------------------------------------------------- #
@@ -105,10 +105,6 @@ _REF_PREFIX = 'group-file:'
 _REQUEST_DIR = 'runtime/novel-mvp/requests'
 _SPINE_DIR = 'runtime/novel-mvp/spine'
 _REGISTRY_DIR = 'runtime/novel-mvp/runs'
-
-
-def sha256_text(text: str) -> str:
-    return hashlib.sha256(text.encode('utf-8')).hexdigest()
 
 
 def canonical_json(value: Any) -> str:

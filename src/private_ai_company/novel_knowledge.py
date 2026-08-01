@@ -11,13 +11,14 @@ Frozen contract:
 
 from __future__ import annotations
 
-import hashlib
 import json
 import math
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Protocol
+
+from ._hashing import sha256_text
 
 # --------------------------------------------------------------------------
 # Constants
@@ -63,10 +64,6 @@ PROJECT_ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]{2,63}$")
 def estimated_tokens(text: str) -> int:
     """Deterministic conservative token estimate (contract section 8)."""
     return max(1, math.ceil(len(text.encode("utf-8")) / 3))
-
-
-def sha256_text(text: str) -> str:
-    return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
 def canonical_json(value: Any) -> str:
